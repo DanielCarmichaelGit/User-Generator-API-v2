@@ -1,1 +1,1 @@
-web:node index.js
+web: nodemon run start

@@ -11,9 +11,7 @@ mongoose.connect(
         useFindAndModify: false,
         useUnifiedTopology: true,
         useNewUrlParser: true,
-        useCreateIndex: true,
-        server:{socketOptions:{keepAlive: 300000,connectTimeoutMS:30000}},
-        replset:{socketOptions:{keepAlive: 300000,connectTimeoutMS:30000}}
+        useCreateIndex: true
     },
 
     function(err) {
