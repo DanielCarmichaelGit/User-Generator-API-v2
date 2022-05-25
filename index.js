@@ -5,6 +5,11 @@ const mongoose = require('mongoose');
 const mongoString = process.env.DATABASE_URL;
 const routes = require('./routes/routes');
 
+const production = "https://serene-garden-99449.herokuapp.com/";
+const development = "http://localhost:3000";
+
+const baseUrl = process.env.NODE_ENV ? production : development;
+
 mongoose.connect(
     mongoString,
     {
@@ -37,6 +42,4 @@ app.use(express.json());
 
 app.use('/api', routes)
 
-app.listen(3000, () => {
-    console.log(`Server Started at ${3000}`)
-})
+app.listen(production || development);
