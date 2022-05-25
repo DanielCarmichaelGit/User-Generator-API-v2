@@ -8,10 +8,8 @@ const routes = require('./routes/routes');
 mongoose.connect(
     mongoString,
     {
-        useFindAndModify: false,
         useUnifiedTopology: true,
         useNewUrlParser: true,
-        useCreateIndex: true
     },
 
     function(err) {
