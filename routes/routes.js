@@ -2,8 +2,13 @@ const express = require('express');
 const _ = require('lodash');
 const userModel = require('../models/userModel');
 const schemaModel = require('../models/schemaModel');
+const { application } = require('express');
 
 const router = express.Router()
+
+router.get('/', (req,res) => {
+    res.send(process.cwd() + '/index.html')
+})
 
 // all endpoints associated with schema creation and retrieval are below
 router.post('/createSchema', async (req, res) => {

@@ -1,1 +1,1 @@
-web: nodemon run start
+web: node run start

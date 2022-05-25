@@ -5,8 +5,7 @@ const mongoose = require('mongoose');
 const mongoString = process.env.DATABASE_URL;
 const routes = require('./routes/routes');
 
-const production = "https://serene-garden-99449.herokuapp.com/";
-const development = "http://localhost:3000";
+var port_number = server.listen(process.env.PORT || 3000);
 
 const baseUrl = process.env.NODE_ENV ? production : development;
 
@@ -42,4 +41,4 @@ app.use(express.json());
 
 app.use('/api', routes)
 
-app.listen(production || development);
+app.listen(port_number);
