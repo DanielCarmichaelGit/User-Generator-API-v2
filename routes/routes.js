@@ -80,7 +80,7 @@ router.post('/users/createUser', async (req, res) => {
 
 
 //Get User by ANY Method
-// add potential default value
+// add potential default value to the :literal param
 router.get('/users/getUserByAny/:key/:value/:literal', async (req, res) => {
     try {
 
