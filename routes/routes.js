@@ -95,7 +95,7 @@ router.post('/users/createUser/batch', async(req,res) => {
     })
 
     try {
-        const dataToSave = await db.users.insertMany(data);
+        const dataToSave = await db.collection.users.insertMany(data);
     }
     catch (error) {
         res.status(400).json({message: error.message});
