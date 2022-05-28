@@ -82,8 +82,8 @@ router.post('/users/createUser', async (req, res) => {
 // Batch Create Users
 // not sure how to do this yet but i will figure it out soon lol
 router.post('/users/createUser/batch', async(req,res) => {
-    userModel.insertMany([{"record":{"null":0}}]).then(function(){
-        console.log("Data inserted")  // Success
+    userModel.insertMany(req.body).then(function(){
+        res.status(200)  // Success
     }).catch(function(error){
         res.status(400).json({message: error.message})     // Failure
     });
