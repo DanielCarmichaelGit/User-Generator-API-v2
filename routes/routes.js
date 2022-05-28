@@ -98,7 +98,7 @@ router.post('/users/createUser/batch', async(req,res) => {
     userModel.insertMany(req).then(function(){
         console.log("Data inserted")  // Success
     }).catch(function(error){
-        console.log(error)      // Failure
+        res.status(400).json({message: error.message})     // Failure
     });
 })
 
