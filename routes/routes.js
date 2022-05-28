@@ -80,7 +80,7 @@ router.post('/users/createUser', async (req, res) => {
 
 
 //Get User by ANY Method
-router.get('/users/getUserByAny/:key&:value', async (req, res) => {
+router.get('/users/getUserByAny/:key/:value', async (req, res) => {
     try {
         const data = await userModel.find();
         const user = data.find(record => record[req.params.key] === req.params.value);
