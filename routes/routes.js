@@ -79,6 +79,19 @@ router.post('/users/createUser', async (req, res) => {
 })
 
 
+//Get User by ANY Method
+router.get('/users/getUserByAny/:key&:value', async (req, res) => {
+    try {
+        const data = await userModel.find();
+        const user = data.find(record => record[req.params.key] === req.params.value);
+        res.json(user);
+    }
+    catch (error) {
+        res.status(400).json({message: error.message})
+    }
+})
+
+
 // Batch Create Users
 // not sure how to do this yet but i will figure it out soon lol
 router.post('/users/createUser/batch', async(req,res) => {
