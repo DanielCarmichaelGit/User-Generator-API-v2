@@ -3,6 +3,7 @@ const _ = require('lodash');
 const userModel = require('../models/userModel');
 const schemaModel = require('../models/schemaModel');
 const { application } = require('express');
+const { db } = require('../models/userModel');
 
 const router = express.Router()
 
@@ -80,16 +81,35 @@ router.post('/users/createUser', async (req, res) => {
 
 // Batch Create Users
 // not sure how to do this yet but i will figure it out soon lol
+router.post('/users/createUser/batch', async(req,res) => {
+    const data = req.body.map(user => {
+        return new userModel({
+            record :user.record,
+            id: user.id,
+            company: user.company,
+            jobTitle: user.jobTitle,
+            registration: user.registration,
+            location: user.location,
+            phone: user.phone
+        })
+    })
 
+    try {
+        const dataToSave = await db.users.users.insertMany(data);
+    }
+    catch (error) {
+        res.status(400).json({message: error.message});
+    }
+})
 
 
 //Get all Method
 router.get('/users/getAll', async (req, res) => {
-    try{
+    try {
         const data = await userModel.find();
         res.json(data)
     }
-    catch(error){
+    catch(error) {
         res.status(400).json({message: error.message})
     }
 })
