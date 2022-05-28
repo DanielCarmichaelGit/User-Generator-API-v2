@@ -76,7 +76,7 @@ router.post('/users/createUser', async (req, res) => {
 })
 
 // get one user
-router.get('/users/getOneUser', (res,req) => {
+router.get('/users/getOneUser', async (res,req) => {
     try {
         const data = await userModel.find();
         res.json(data[0])
