@@ -52,7 +52,7 @@ router.get('/getAllSchemas', async (req, res) => {
 /* ###################################################################### */
 
 // all endpoints associated with user creation and retrieval are below
-router.post('/createUser', async (req, res) => {
+router.post('/users/createUser', async (req, res) => {
     const data = new userModel({
         record: req.body.record,
         //firstName: req.body.firstName,
@@ -84,7 +84,7 @@ router.post('/createUser', async (req, res) => {
 
 
 //Get all Method
-router.get('/getAll', async (req, res) => {
+router.get('/users/getAll', async (req, res) => {
     try{
         const data = await userModel.find();
         res.json(data)
@@ -95,7 +95,7 @@ router.get('/getAll', async (req, res) => {
 })
 
 //Get 100 Random Users
-router.get('/random', async (req, res) => {
+router.get('/users/random', async (req, res) => {
     try {
         const data = await userModel.find();
 
@@ -109,7 +109,7 @@ router.get('/random', async (req, res) => {
 })
 
 //Get by ID Method
-router.get('/getUserById/:id', async (req, res) => {
+router.get('/users/getUserById/:id', async (req, res) => {
     try {
         const data = await userModel.find();
         const user = data.find(record => record.id === req.params.id);
@@ -123,7 +123,7 @@ router.get('/getUserById/:id', async (req, res) => {
 })
 
 //Update by ID Method
-router.patch('/updateUserById/:id', async (req, res) => {
+router.patch('/users/updateUserById/:id', async (req, res) => {
     try {
         const id = req.params.id;
         const updatedData = req.body;
@@ -141,7 +141,7 @@ router.patch('/updateUserById/:id', async (req, res) => {
 })
 
 //Delete by ID Method
-router.delete('/deleteUserById/:id', async (req, res) => {
+router.delete('/users/deleteUserById/:id', async (req, res) => {
     try {
         const id = req.params.id;
         const data = await userModel.findByIdAndDelete(id)
