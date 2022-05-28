@@ -91,7 +91,7 @@ router.get('/users/getUser/:key&:value', async (req, res) => {
     const all = req.query.all;
     const usersToReturn = Number.parseInt(req.query.count, 10) || 1;
     const searchType = (all === "true" || usersToReturn > 1) ? "filter" : "find";
-    
+
     try {
         const data = await userModel.find();
         let user = data[searchType](record => record.record[req.params.key] == req.params.value);
