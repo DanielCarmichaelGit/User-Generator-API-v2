@@ -7,9 +7,6 @@ const db = require('mongoose');
 
 const router = express.Router()
 
-router.get('/', (req,res) => {
-    res.send(process.cwd() + '/index.html')
-})
 
 // all endpoints associated with schema creation and retrieval are below
 router.post('/createSchema', async (req, res) => {
@@ -78,6 +75,17 @@ router.post('/users/createUser', async (req, res) => {
     }
 })
 
+// get one user
+router.get('/users/getOneUser', (res,req) => {
+    try {
+        const data = await userModel.find();
+        res.json(data[0])
+    }
+    catch(error) {
+        res.status(400).json({message: error.message})
+    }
+})
+
 // Get User by ANY Method
 // Needs two parameters: key and value. Two additional query terms are also available: all and count
 // Example Endpoint: http://localhost:3000/api/v1/users/getUser/age&75?all=true
@@ -105,7 +113,8 @@ router.get('/users/getUser/:key&:value', async (req, res) => {
 
 
 // Batch Create Users
-// not sure how to do this yet but i will figure it out soon lol
+// Keep Batches to <= a length of 10 to prevent mongo timeouts
+// The timeout limit should not be altered as heroku has its own timeout configs
 router.post('/users/createUser/batch', async(req,res) => {
     userModel.insertMany(req.body).then(function(){
         res.status(200)  // Success
@@ -183,5 +192,23 @@ router.delete('/users/deleteUserById/:id', async (req, res) => {
         res.status(400).json({ message: error.message })
     }
 })
+
+/* ###################################################################### */
+
+// all endpoints associated with transactions are below
+// the transaction data should be  dynamically generated instead of stored
+// this will provide the client with the highest level of control over the output
+
+// get 100 transactions (base)
+router.get('/transactions/getTransactions', (req,res) => {
+    var transactions = [];
+    let price = (Math.random() * 100).toFixed(2);
+    let transaction = {
+        "price": price,
+        "tax": (price * 0.06).toFixed(2),
+        "productsPurchased": (Math.random)
+    };
+})
+
 
 module.exports = router;
