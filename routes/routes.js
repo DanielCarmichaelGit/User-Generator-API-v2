@@ -80,16 +80,19 @@ router.post('/users/createUser', async (req, res) => {
 
 
 //Get User by ANY Method
-router.get('/users/getUserByAny/:key/:value/:bool', async (req, res) => {
+router.get('/users/getUserByAny/:key/:value/:literal', async (req, res) => {
     try {
-        if (req.params.bool === "false"){
+
+        if (req.params.literal === "false"){
             const data = await userModel.find();
             const user = data.find(record => record.record[req.params.key] == req.params.value);
             res.json(user);
         }
-        const data = await userModel.find();
-        const user = data.filter(record => record.record[req.params.key] == req.params.value);
-        res.json(user);
+        else if (!req.params.literal || req.params.literal === true) {
+            const data = await userModel.find();
+            const user = data.filter(record => record.record[req.params.key] == req.params.value);
+            res.json(user);
+        }
     }
     catch (error) {
         res.status(400).json({message: error.message})
