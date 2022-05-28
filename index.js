@@ -5,8 +5,6 @@ const mongoose = require('mongoose');
 const mongoString = process.env.DATABASE_URL;
 const routes = require('./routes/routes');
 
-var port_number = server.listen(process.env.PORT || 3000);
-
 const baseUrl = process.env.NODE_ENV ? production : development;
 
 mongoose.connect(
@@ -38,6 +36,8 @@ database.once('connected', () => {
 const app = express();
 
 app.use(express.json());
+
+var port_number = server.listen(process.env.PORT || 3000);
 
 app.use('/api', routes)
 
