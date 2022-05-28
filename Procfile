@@ -1,1 +1,1 @@
-web: node run start
+web: node run index.js
