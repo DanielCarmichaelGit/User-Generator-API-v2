@@ -78,22 +78,25 @@ router.post('/users/createUser', async (req, res) => {
     }
 })
 
+// Get User by ANY Method
+// Needs two parameters: key and value. Two additional query terms are also available: all and count
+// Example Endpoint: http://localhost:3000/api/v1/users/getUser/age&75?all=true
+//         (return all users with age 75)
+// Example Endpoint: http://localhost:3000/api/v1/users/getUser/firstName&Elon?count=5  
+//         (return the first 5 records with first name Elon)
+// If no query terms are provided, the default is to return the first record
+// If both query terms are provided, "all" will overide count
+// If count is higher than the number of matching records, all records will be returned
+router.get('/users/getUser/:key&:value', async (req, res) => {
+    const all = req.query.all;
+    const usersToReturn = Number.parseInt(req.query.count, 10) || 1;
+    const searchType = (all === "true" || usersToReturn > 1) ? "filter" : "find";
 
-// add potential default value to the :literal param
-router.get('/users/getUserByAny/:key/:value/:literal', async (req, res) => {
     try {
-
-        if (req.params.literal === "false"){
-            const data = await userModel.find();
-            const user = data.find(record => record.record[req.params.key] == req.params.value);
-            res.json(user);
-        }
-        // add undefined and/or null condition
-        else if (req.params.literal === "true") {
-            const data = await userModel.find();
-            const user = data.filter(record => record.record[req.params.key] == req.params.value);
-            res.json(user);
-        }
+        const data = await userModel.find();
+        let user = data[searchType](record => record.record[req.params.key] == req.params.value);
+        if (all !== "true" && user.length > usersToReturn) { user.length = usersToReturn; }
+        res.json(user);
     }
     catch (error) {
         res.status(400).json({message: error.message})
