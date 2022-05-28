@@ -11,6 +11,7 @@ mongoose.connect(
     {
         useUnifiedTopology: true,
         useNewUrlParser: true,
+        server: { socketOptions: { keepAlive: 50000, connectTimeout: 50000}}
     },
 
     function(err) {
