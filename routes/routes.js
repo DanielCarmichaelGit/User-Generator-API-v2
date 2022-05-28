@@ -88,7 +88,7 @@ router.get('/users/getUserByAny/:key/:value/:literal', async (req, res) => {
             const user = data.find(record => record.record[req.params.key] == req.params.value);
             res.json(user);
         }
-        else if (!req.params.literal || req.params.literal === true) {
+        else if (req.params.literal === null || req.params.literal === undefined || req.params.literal === "true") {
             const data = await userModel.find();
             const user = data.filter(record => record.record[req.params.key] == req.params.value);
             res.json(user);
