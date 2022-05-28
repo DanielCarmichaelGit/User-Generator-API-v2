@@ -3,7 +3,7 @@ const _ = require('lodash');
 const userModel = require('../models/userModel');
 const schemaModel = require('../models/schemaModel');
 const { application } = require('express');
-const { db } = require('../models/userModel');
+const db = process.env.DATABASE_URL;
 
 const router = express.Router()
 
