@@ -5,7 +5,6 @@ const mongoose = require('mongoose');
 const mongoString = process.env.DATABASE_URL;
 const routes = require('./routes/routes');
 
-const baseUrl = process.env.NODE_ENV ? production : development;
 
 mongoose.connect(
     mongoString,
