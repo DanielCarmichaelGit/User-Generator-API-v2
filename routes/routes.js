@@ -80,6 +80,7 @@ router.post('/users/createUser', async (req, res) => {
 
 
 //Get User by ANY Method
+// add potential default value
 router.get('/users/getUserByAny/:key/:value/:literal', async (req, res) => {
     try {
 
@@ -88,7 +89,8 @@ router.get('/users/getUserByAny/:key/:value/:literal', async (req, res) => {
             const user = data.find(record => record.record[req.params.key] == req.params.value);
             res.json(user);
         }
-        else if (req.params.literal === null || req.params.literal === undefined || req.params.literal === "true") {
+        // add undefined and/or null condition
+        else if (req.params.literal === "true") {
             const data = await userModel.find();
             const user = data.filter(record => record.record[req.params.key] == req.params.value);
             res.json(user);
