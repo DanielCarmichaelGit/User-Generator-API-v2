@@ -3,7 +3,6 @@ const _ = require('lodash');
 const userModel = require('../models/userModel');
 const schemaModel = require('../models/schemaModel');
 const { application } = require('express');
-const db = process.env.DATABASE_URL;
 
 const router = express.Router()
 
@@ -82,6 +81,9 @@ router.post('/users/createUser', async (req, res) => {
 // Batch Create Users
 // not sure how to do this yet but i will figure it out soon lol
 router.post('/users/createUser/batch', async(req,res) => {
+    var MongoClient = require('mongodb').MongoClient;
+    var url = process.env.DATABASE_URL ?? process.env.MONGODB_URI;
+
     const data = req.body.map(user => {
         return new userModel({
             record :user.record,
@@ -94,12 +96,43 @@ router.post('/users/createUser/batch', async(req,res) => {
         })
     })
 
+    var createNewEntries = function(db, entries) {
+
+        // Get the collection and bulk api artefacts
+        var collection = db.collection('users'),          
+            bulkUpdateOps = [];    
+    
+        entries.forEach(function(doc) {
+            bulkUpdateOps.push({ "insertOne": { "document": doc } });
+    
+            if (bulkUpdateOps.length === 1000) {
+                collection.bulkWrite(bulkUpdateOps).then(function(r) {
+                    // do something with result
+                });
+                bulkUpdateOps = [];
+            }
+        })
+    
+        if (bulkUpdateOps.length > 0) {
+            collection.bulkWrite(bulkUpdateOps).then(function(r) {
+                return r
+            });
+        }
+    };
+
+    MongoClient.connect(url, function(err, db) {
+        createNewEntries(db, data, function() {
+            db.close();
+        });
+    });
+    /*
     try {
-        const dataToSave = await db.users.insertMany(data);
+        const dataToSave = await db.C
     }
     catch (error) {
         res.status(400).json({message: error.message});
     }
+    */
 })
 
 
