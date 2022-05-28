@@ -38,6 +38,6 @@ app.use(express.json());
 
 var port_number = app.listen(process.env.PORT || 3000);
 
-app.use('/api', routes)
+app.use('/api/v1', routes)
 
 app.listen(port_number);
