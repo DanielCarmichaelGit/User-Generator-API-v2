@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User API Documentation</title>
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>User API Documentation</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="./getting-started.html">Getting Started</a></li>
+        <li><a href="./schema-endpoints.html">Schema Endpoints</a></li>
+        <li><a href="./user-endpoints.html">User Endpoints</a></li>
+      </ul>
+    </nav>
+    <section class="docs-content">
+      <h2>Getting Started</h2>
+      <p>This guide will help you get started with the User API.</p>
+      <p>
+        The User API is a RESTful API that allows you to create, read, update,
+        and delete users.
+      </p>
+
+      <h3>Create a User</h3>
+      <p>
+        To create a user, you must send a POST request to the
+        <code>/users</code> endpoint.
+      </p>
+      <p>
+        The request body must contain a JSON object with the following
+        properties:
+      </p>
+      <ul>
+        <li><code>username</code> - The username of the user.</li>
+        <li><code>password</code> - The password of the user.</li>
+        <li><code>email</code> - The email of the user.</li>
+      </ul>
+      <p>
+        The response will contain a JSON object with the following properties:
+      </p>
+      <ul>
+        <li><code>id</code> - The unique identifier of the user.</li>
+        <li><code>username</code> - The username of the user.</li>
+        <li><code>email</code> - The email of the user.</li>
+        <li>
+          <code>created_at</code> - The date and time the user was created.
+        </li>
+        <li>
+          <code>updated_at</code> - The date and time the user was last updated.
+        </li>
+      </ul>
+
+      <h3>Read a User</h3>
+      <p>
+        To read a user, you must send a GET request to the
+        <code>/users/:id</code> endpoint.
+      </p>
+      <p>
+        The response will contain a JSON object with the following properties:
+      </p>
+      <ul>
+        <li><code>id</code> - The unique identifier of the user.</li>
+        <li><code>username</code> - The username of the user.</li>
+        <li><code>email</code> - The email of the user.</li>
+        <li>
+          <code>created_at</code> - The date and time the user was created.
+        </li>
+        <li>
+          <code>updated_at</code> - The date and time the user was last updated.
+        </li>
+      </ul>
+    </section>
+    <footer>
+      <p>&copy; 2022 User API</p>
+    </footer>
+  </body>
+</html>
