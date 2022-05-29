@@ -4,6 +4,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const mongoString = process.env.DATABASE_URL;
 const routes = require('./routes/routes');
+const cors = require('cors');
 
 
 mongoose.connect(
@@ -38,6 +39,8 @@ app.use(express.json());
 
 var port_number = app.listen(process.env.PORT || 3000);
 
-app.use('/api/v1', routes)
+app.use('/api/v1', routes);
+
+app.use(cors());
 
 app.listen(port_number);
