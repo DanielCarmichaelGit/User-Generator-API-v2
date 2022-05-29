@@ -41,6 +41,6 @@ var port_number = app.listen(process.env.PORT || 3000);
 
 app.use('/api/v1', routes);
 
-app.use(cors());
+app.use(cors({origin:['https://serene-garden-99449.herokuapp.com/'], methods: ["GET","POST","DELETE"], credentials: true, origin: true}));
 
 app.listen(port_number);
