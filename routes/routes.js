@@ -79,7 +79,7 @@ router.post('/users/createUser', async (req, res) => {
 router.get('/users/getOneUser', async (req,res) => {
     try {
         const data = await userModel.find();
-        res.json(data[0])
+        res.json(_.sample(data))
     }
     catch(error) {
         res.status(400).json({message: error.message})
