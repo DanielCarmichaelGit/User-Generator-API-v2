@@ -2,8 +2,6 @@ const express = require('express');
 const _ = require('lodash');
 const userModel = require('../models/userModel');
 const schemaModel = require('../models/schemaModel');
-const { application } = require('express');
-const db = require('mongoose');
 
 const router = express.Router()
 
