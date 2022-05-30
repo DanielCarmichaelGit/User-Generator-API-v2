@@ -199,12 +199,19 @@ router.delete('/users/deleteUserById/:id', async (req, res) => {
 
 // get 100 transactions (base)
 router.get('/transactions/getTransactions', (req,res) => {
+    class product {
+        constructor(code, sku, price, category) {
+
+        }
+    }
+
     var transactions = [];
     let price = (Math.random() * 100).toFixed(2);
     let transaction = {
         "price": price,
         "tax": (price * 0.06).toFixed(2),
-        "productsPurchased": (Math.random)
+        "productsPurchased": Math.floor(Math.random * 10),
+
     };
 })
 
