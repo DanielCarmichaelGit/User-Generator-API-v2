@@ -41,8 +41,10 @@ var port_number = app.listen(process.env.PORT || 3000);
 
 app.use('/api/v1', routes);
 
+
+// change to specific urls for production
 app.use(cors({
-    origin: "*"
+    "Access-Control-Allow-Origin": "*"
 }))
 
 app.listen(port_number);
