@@ -34,7 +34,7 @@ $("#get-user-button")
 }
         </code></pre>
     
-    <span id="view-docs-link"><a href="./resources/docs/getting-started.html">View Documentation</a></span>
+    <span id="view-docs-link"><a href="./frontend/docs/getting-started.html">View Documentation</a></span>
         `;
       })
       .catch((error) => {
