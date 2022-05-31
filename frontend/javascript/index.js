@@ -1,9 +1,16 @@
 import FetchWrapper from "./fetchwrapper.js";
 
-document
-  .querySelector("#get-user-button")
-  .addEventListener("click", function () {
-    const getUserResult = document.querySelector("#get-user-result");
+const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
+
+$("#get-user-button")
+  .addEventListener("click", (event) => {
+    event.target.disabled = true;
+    event.target.innerHTML = `
+      <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+    `;
+
+    const getUserResult = $("#get-user-result");
 
     const url = new FetchWrapper(
       "https://serene-garden-99449.herokuapp.com/api/v1/users/"
@@ -39,6 +46,8 @@ document
       })
       .finally(() => {
         getUserResult.style.height = "440px";
+        event.target.disabled = false;
+        event.target.innerHTML = "GET USER";
       });
 
     /* Hardcoded user result
