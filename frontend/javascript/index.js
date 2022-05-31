@@ -12,11 +12,10 @@ $("#get-user-button")
 
     const getUserResult = $("#get-user-result");
 
-    const url = new FetchWrapper(
-      "https://serene-garden-99449.herokuapp.com/api/v1/users/"
-    );
+    //const API = new FetchWrapper("http://localhost:3000/api/v1/users/"); // For testing on local server
+    const API = new FetchWrapper("https://serene-garden-99449.herokuapp.com/api/v1/users/");
 
-    url
+    API
       .get("getOneUser")
       .then((data) => {
         getUserResult.innerHTML = `
@@ -33,8 +32,6 @@ $("#get-user-button")
     "occupation": "${data.jobTitle} at ${data.company}",
 }
         </code></pre>
-    
-    <span id="view-docs-link"><a href="./frontend/docs/getting-started.html">View Documentation</a></span>
         `;
       })
       .catch((error) => {
@@ -45,7 +42,7 @@ $("#get-user-button")
             `;
       })
       .finally(() => {
-        getUserResult.style.height = "440px";
+        getUserResult.style.height = "354px";
         event.target.disabled = false;
         event.target.innerHTML = "GET USER";
       });
