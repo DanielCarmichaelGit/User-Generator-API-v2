@@ -2,8 +2,7 @@ const express = require('express');
 const _ = require('lodash');
 const userModel = require('../models/userModel');
 const schemaModel = require('../models/schemaModel');
-const { application } = require('express');
-const db = require('mongoose');
+const lastNameModel = require('../models/lastNameModel')
 
 const router = express.Router()
 
@@ -79,7 +78,7 @@ router.post('/users/createUser', async (req, res) => {
 router.get('/users/getOneUser', async (req,res) => {
     try {
         const data = await userModel.find();
-        res.json(data[0])
+        res.json(_.sample(data))
     }
     catch(error) {
         res.status(400).json({message: error.message})
@@ -121,6 +120,15 @@ router.post('/users/createUser/batch', async(req,res) => {
     }).catch(function(error){
         res.status(400).json({message: error.message})     // Failure
     });
+})
+
+// Batch create lastNames by demographic
+router.post('/users/createLastName/batch', async(req,res) => {
+    lastNameModel.insertMany(req.body).then(function() {
+        res.status(200) // success
+    }).catch(function(error) {
+        res.status(400).json({message: error.message}) // failure
+    })
 })
 
 
@@ -201,12 +209,19 @@ router.delete('/users/deleteUserById/:id', async (req, res) => {
 
 // get 100 transactions (base)
 router.get('/transactions/getTransactions', (req,res) => {
+    class product {
+        constructor(code, sku, price, category) {
+
+        }
+    }
+
     var transactions = [];
     let price = (Math.random() * 100).toFixed(2);
     let transaction = {
         "price": price,
         "tax": (price * 0.06).toFixed(2),
-        "productsPurchased": (Math.random)
+        "productsPurchased": Math.floor(Math.random * 10),
+
     };
 })
 
