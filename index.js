@@ -6,6 +6,9 @@ const mongoString = process.env.DATABASE_URL;
 const routes = require('./routes/routes');
 const cors = require('cors');
 
+// add cors headers
+app.use(cors())
+
 
 mongoose.connect(
     mongoString,
@@ -40,11 +43,5 @@ app.use(express.json());
 var port_number = app.listen(process.env.PORT || 3000);
 
 app.use('/api/v1', routes);
-
-
-// change to specific urls for production
-app.use(cors({
-    "Access-Control-Allow-Origin": "*"
-}))
 
 app.listen(port_number);

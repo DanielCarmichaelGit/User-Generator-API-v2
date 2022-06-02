@@ -2,6 +2,7 @@ const express = require('express');
 const _ = require('lodash');
 const userModel = require('../models/userModel');
 const schemaModel = require('../models/schemaModel');
+const lastNameModel = require('../models/lastNameModel')
 
 const router = express.Router()
 
@@ -119,6 +120,15 @@ router.post('/users/createUser/batch', async(req,res) => {
     }).catch(function(error){
         res.status(400).json({message: error.message})     // Failure
     });
+})
+
+// Batch create lastNames by demographic
+router.post('/users/createLastName/batch', async(req,res) => {
+    lastNameModel.insertMany(req.body).then(function() {
+        res.status(200) // success
+    }).catch(function(error) {
+        res.status(400).json({message: error.message}) // failure
+    })
 })
 
 
