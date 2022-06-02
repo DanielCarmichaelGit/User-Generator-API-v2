@@ -6,9 +6,6 @@ const mongoString = process.env.DATABASE_URL;
 const routes = require('./routes/routes');
 const cors = require('cors');
 
-// add cors headers
-app.use(cors())
-
 
 mongoose.connect(
     mongoString,
@@ -36,7 +33,11 @@ database.on('error', (error) => {
 database.once('connected', () => {
     console.log('Database Connected');
 })
+
 const app = express();
+
+// add cors headers
+app.use(cors())
 
 app.use(express.json());
 
