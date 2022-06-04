@@ -45,4 +45,10 @@ for (var list of surnameArray) {
     list.map(surname => allSurnames.push(surname))
 }
 
-axios.post('')
+axios.post('https://serene-garden-99449.herokuapp.com/api/v1/users/creaetLastNames/batch', {
+    allSurnames
+}).then((response) => {
+    console.log(response);
+}, (error) => {
+    console.log(error);
+});
