@@ -121,7 +121,12 @@ body {
     margin-bottom: 6px;
 }
 .docs-content h3 {
+    margin-top: 40px;
     margin-left: 10px;
+}
+.docs-content h4 {
+    margin-top: 40px;
+    margin-left: 20px;
 }
 
 section {
