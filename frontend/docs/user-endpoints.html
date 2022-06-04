@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User API Documentation</title>
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>User API Documentation</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="./getting-started.html">Getting Started</a></li>
+        <li><a href="./user-endpoints.html" class="this-page">User Endpoints</a></li>
+        <!-- <li><a href="./schema-endpoints.html">Schema Endpoints</a></li> -->
+      </ul>
+    </nav>
+    <section class="docs-content">
+      <h2>User Endpoints</h2>
+      <!-- list and code blocks and descriptions of user enpoint api -->
+      <ul>
+        <li>
+          <h4>Create User</h4>
+          <p>
+            <code>POST</code>
+            <code>/api/v1/users</code>
+          </p>
+          <p>
+            The request body must contain a JSON object with the following
+            properties:
+          </p>
+          <ul>
+            <li><code>name</code> - The name of the user.</li>
+            <li><code>email</code> - The email of the user.</li>
+            <li><code>password</code> - The password of the user.</li>
+            <li><code>schema</code> - The schema of the user.</li>
+          </ul>
+          <p>
+            The response will contain a JSON object with the following
+            properties:
+          </p>
+          <ul>
+            <li><code>id</code> - The id of the user.</li>
+            <li><code>name</code> - The name of the user.</li>
+            <li><code>email</code> - The email of the user.</li>
+            <li><code>schema</code> - The schema of the user.</li>
+          </ul>
+        </li>
+        <li>
+          <h4>Get User</h4>
+          <p>
+            <code>GET</code>
+            <code>/api/v1/users/:id</code>
+          </p>
+          <p>
+            The response will contain a JSON object with the following
+            properties:
+          </p>
+          <ul>
+            <li><code>id</code> - The id of the user.</li>
+            <li><code>name</code> - The name of the user.</li>
+            <li><code>email</code> - The email of the user.</li>
+            <li><code>schema</code> - The schema of the user.</li>
+          </ul>
+        </li>
+        <li>
+          <h4>Update User</h4>
+          <p>
+            <code>PUT</code>
+            <code>/api/v1/users/:id</code>
+          </p>
+          <p>
+            The request body must contain a JSON object with the following
+            properties:
+          </p>
+          <ul>
+            <li><code>name</code> - The name of the user.</li>
+            <li><code>email</code> - The email of the user.</li>
+            <li><code>password</code> - The password of the user.</li>
+            <li><code>schema</code> - The schema of the user.</li>
+          </ul>
+          <p>
+            The response will contain a JSON object with the following
+            properties:
+          </p>
+          <ul>
+            <li><code>id</code> - The id of the user.</li>
+            <li><code>name</code> - The name of the user.</li>
+            <li><code>email</code> - The email of the user.</li>
+            <li><code>schema</code> - The schema of the user.</li>
+          </ul>
+        </li>
+        <li>
+          <h4>Delete User</h4>
+          <p>
+            <code>DELETE</code>
+            <code>/api/v1/users/:id</code>
+          </p>
+          <p>
+            The response will contain a JSON object with the following
+            properties:
+          </p>
+          <ul>
+            <li><code>id</code> - The id of the user.</li>
+            <li><code>name</code> - The name of the user.</li>
+            <li><code>email</code> - The email of the user.</li>
+            <li><code>schema</code> - The schema of the user.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <footer>
+      <p>&copy; 2022 User API</p>
+    </footer>
+  </body>
+</html>
