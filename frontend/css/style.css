@@ -115,18 +115,18 @@ body {
   margin: 10px;
 }
 .docs-content ul {
-    margin: 20px 0 20px 50px;
+  margin: 20px 0 20px 50px;
 }
 .docs-content ul li {
-    margin-bottom: 6px;
+  margin-bottom: 6px;
 }
 .docs-content h3 {
-    margin-top: 40px;
-    margin-left: 10px;
+  margin-top: 40px;
+  margin-left: 10px;
 }
 .docs-content h4 {
-    margin-top: 40px;
-    margin-left: 20px;
+  margin-top: 40px;
+  margin-left: 20px;
 }
 
 section {
@@ -151,7 +151,7 @@ section code {
   font-weight: 600;
   margin: 0;
   padding: 2px 6px;
-  background-color:#efefef;
+  background-color: #efefef;
 }
 code.block {
   margin: 30px 0;
@@ -180,7 +180,6 @@ table td {
   padding: 10px;
   border-bottom: 1px solid #e0e0e0;
 }
-
 
 /* Header */
 header {
