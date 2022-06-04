@@ -1,7 +1,10 @@
+const { Axios, default: axios } = require('axios');
 const fs = require('fs');
 
-const surnamesByRace = {black: [], white: [], hispanic: [], nativeAmerican: [], asian: []};
+var surnamesByRace = {black: [], white: [], hispanic: [], nativeAmerican: [], asian: []};
 const races = ["black", "white", "hispanic", "nativeAmerican", "asian"]
+var surnameArray = [];
+var allSurnames = [];
 
 try {
     const white = fs.readFileSync('users/white/white-surnames.txt', {encoding: 'utf8'}).split("\n");
@@ -30,8 +33,16 @@ try {
         line = line.split("\t");
         surnamesByRace.asian.push({name:line[0], demographic:"asian"});
     }
-    console.log(surnamesByRace);
+    //console.log(surnamesByRace);
 }
 catch(err) {
     console.log(err)
 }
+
+Object.values(surnamesByRace).forEach(surname => surnameArray.push(surname))
+
+for (var list of surnameArray) {
+    list.map(surname => allSurnames.push(surname))
+}
+
+axios.post('')

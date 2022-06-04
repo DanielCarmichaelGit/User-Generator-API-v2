@@ -49,6 +49,25 @@ router.get('/getAllSchemas', async (req, res) => {
 /* ###################################################################### */
 
 // all endpoints associated with user creation and retrieval are below
+
+// batch create last names
+router.post('/users/createLastNames/batch', async (req,res) => {
+    lastNameModel.insertMany(req.body).then(function(){
+        res.status(200)  // Success
+    }).catch(function(error){
+        res.status(400).json({message: error.message})     // Failure
+    });
+})
+
+// batch create firstNames
+router.post('/users/createFirstNames/batch', async (req,res) => {
+    firstNameModel.insertMany(req.body).then(function(){
+        res.status(200)  // Success
+    }).catch(function(error){
+        res.status(400).json({message: error.message})     // Failure
+    });
+})
+
 router.post('/users/createUser', async (req, res) => {
     const data = new userModel({
         record: req.body.record,
