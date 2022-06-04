@@ -21,95 +21,102 @@
     </nav>
     <section class="docs-content">
       <h2>User Endpoints</h2>
-      <!-- list and code blocks and descriptions of user enpoint api -->
+      <p><em>Currently, all user endpoints are only available as GET requests</em></p>
+      <p>All user objects returned will be formated as demonstrated in the <a href="./getting-started.html">Getting Started</a> section.</p>
+      <!-- lists of user endpoints with descriptions and examples -->
       <ul>
         <li>
-          <h4>Create User</h4>
-          <p>
-            <code>POST</code>
-            <code>/api/v1/users</code>
-          </p>
-          <p>
-            The request body must contain a JSON object with the following
-            properties:
-          </p>
-          <ul>
-            <li><code>name</code> - The name of the user.</li>
-            <li><code>email</code> - The email of the user.</li>
-            <li><code>password</code> - The password of the user.</li>
-            <li><code>schema</code> - The schema of the user.</li>
-          </ul>
-          <p>
-            The response will contain a JSON object with the following
-            properties:
-          </p>
-          <ul>
-            <li><code>id</code> - The id of the user.</li>
-            <li><code>name</code> - The name of the user.</li>
-            <li><code>email</code> - The email of the user.</li>
-            <li><code>schema</code> - The schema of the user.</li>
-          </ul>
-        </li>
-        <li>
-          <h4>Get User</h4>
+          <h4>Get One User</h4>
+          <p>Returns a single user.</p>
           <p>
             <code>GET</code>
-            <code>/api/v1/users/:id</code>
+            <code>/users/getOneUser</code>
           </p>
           <p>
-            The response will contain a JSON object with the following
-            properties:
+            This endpoint accepts no parameters and returns one JSON user object.
           </p>
-          <ul>
-            <li><code>id</code> - The id of the user.</li>
-            <li><code>name</code> - The name of the user.</li>
-            <li><code>email</code> - The email of the user.</li>
-            <li><code>schema</code> - The schema of the user.</li>
-          </ul>
+          <p>
+            The user object is selected randomly from the database.
+          </p>   
         </li>
+        <p>
+          example usage: <code>/users/getOneUser</code>
+        </p>
         <li>
-          <h4>Update User</h4>
+          <h4>Get User (Custom)</h4>
+          <p>Returns one or more users with matching parameters.</p>
+          
           <p>
-            <code>PUT</code>
-            <code>/api/v1/users/:id</code>
+            <code>GET</code>
+            <code>/users/getUser/key&value</code>
           </p>
           <p>
-            The request body must contain a JSON object with the following
-            properties:
-          </p>
-          <ul>
-            <li><code>name</code> - The name of the user.</li>
-            <li><code>email</code> - The email of the user.</li>
-            <li><code>password</code> - The password of the user.</li>
-            <li><code>schema</code> - The schema of the user.</li>
-          </ul>
-          <p>
-            The response will contain a JSON object with the following
-            properties:
+            This endpoint requires two parameters, and allows two additional query terms.
           </p>
           <ul>
-            <li><code>id</code> - The id of the user.</li>
-            <li><code>name</code> - The name of the user.</li>
-            <li><code>email</code> - The email of the user.</li>
-            <li><code>schema</code> - The schema of the user.</li>
+            <p><sub>required:</sub></p>
+            <li><code>key</code> - The key to search for</li>
+            <li><code>value</code> - The value desired to match</li>
+            <p><sub>optional:</sub></p>
+            <li><code>all</code> - Returns all matching users</li>
+            <li><code>count</code> - Returns all users up to the count specified</li>
           </ul>
-        </li>
-        <li>
-          <h4>Delete User</h4>
+          <p>The <code>key</code> matches parameters within the "records" object.</p>
+          <p>The full list of searchable keys are as follows:</p>
+          <ul>
+            <li><code>firstName</code></li>
+            <li><code>lastName</code></li>
+            <li><code>age</code></li>
+            <li><code>email</code></li>
+            <li><code>dob</code></li>
+          </ul>
           <p>
-            <code>DELETE</code>
-            <code>/api/v1/users/:id</code>
+            This endpoint returns a JSON array of user objects.
           </p>
           <p>
-            The response will contain a JSON object with the following
-            properties:
+            example usage: <code>/users/getUser/firstName&John?all=true</code>
+          </p>
+          <p>
+            Considerations for using this endpoint:
           </p>
           <ul>
-            <li><code>id</code> - The id of the user.</li>
-            <li><code>name</code> - The name of the user.</li>
-            <li><code>email</code> - The email of the user.</li>
-            <li><code>schema</code> - The schema of the user.</li>
-          </ul>
+            <li>
+              <p>
+                <code>key</code> and <code>value</code> are required and must be seperated by the <code>&</code> character.
+              </p>
+            </li>
+            <li>
+              <p>
+                If search terms are used, they must be seperated from <code>key&value</code> using the <code>?</code> character.
+              </p>
+            </li>
+            <li>
+              <p>
+                If both search terms are used, they must be seperated from each other by the <code>&</code> character. <br />
+                <em>note: This is not recommended as <code>count</code> will be ignored.</em>
+              </p>
+            </li>
+            <li>
+              <p>
+                If no query terms (<code>count</code> or <code>all</code>) are defined, the default response will be the first record matching the parameter criteria.
+              </p>
+              </li>
+            <li>
+              <p>
+                If both query terms are provided the <code>all</code> term will take precedence and default to true.
+              </p>
+              </li>
+            <li>
+              <p>
+                If <code>count</code> is defined, the endpoint will return the first <code>count</code> records matching the parameter criteria.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <code>count</code> is larger than the amount of available user records, all records will be returned. This ensures no null records are returned.
+              </p>
+            </li>
+
         </li>
       </ul>
     </section>
