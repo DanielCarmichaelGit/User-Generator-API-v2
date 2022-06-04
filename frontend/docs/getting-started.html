@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>User API Documentation</title>
+    <title>Goto Users API Documentation</title>
     <link rel="stylesheet" href="../css/normalize.css" />
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
     <header>
-      <h1>User API Documentation</h1>
+      <h1>Goto Users API Documentation</h1>
     </header>
     <nav>
       <ul>
@@ -21,63 +21,208 @@
     </nav>
     <section class="docs-content">
       <h2>Getting Started</h2>
-      <p>Goto Users is a database of hundereds "pre-generated" users with tons of data points for testing, validating, and many other uses.</p>
       <p>
-        The Users are available through the API is a RESTful API that allows you to create, read, update,
-        and delete users.
-      </p>
-
-      <h3>Create a User</h3>
-      <p>
-        To create a user, you must send a POST request to the
-        <code>/users</code> endpoint.
+        Goto Users is a large user database for testing, validating, and more.
       </p>
       <p>
-        The request body must contain a JSON object with the following
-        properties:
-      </p>
-      <ul>
-        <li><code>username</code> - The username of the user.</li>
-        <li><code>password</code> - The password of the user.</li>
-        <li><code>email</code> - The email of the user.</li>
-      </ul>
-      <p>
-        The response will contain a JSON object with the following properties:
-      </p>
-      <ul>
-        <li><code>id</code> - The unique identifier of the user.</li>
-        <li><code>username</code> - The username of the user.</li>
-        <li><code>email</code> - The email of the user.</li>
-        <li>
-          <code>created_at</code> - The date and time the user was created.
-        </li>
-        <li>
-          <code>updated_at</code> - The date and time the user was last updated.
-        </li>
-      </ul>
-
-      <h3>Read a User</h3>
-      <p>
-        To read a user, you must send a GET request to the
-        <code>/users/:id</code> endpoint.
+        The users are available through the API which is a RESTful API that allows you to acces user data in different ways depending upon the endpoint you use.
       </p>
       <p>
-        The response will contain a JSON object with the following properties:
+        The Goto Users API base url is: <code>https://serene-garden-99449.herokuapp.com/api/v1</code>
       </p>
-      <ul>
-        <li><code>id</code> - The unique identifier of the user.</li>
-        <li><code>username</code> - The username of the user.</li>
-        <li><code>email</code> - The email of the user.</li>
-        <li>
-          <code>created_at</code> - The date and time the user was created.
-        </li>
-        <li>
-          <code>updated_at</code> - The date and time the user was last updated.
-        </li>
-      </ul>
+      <p>
+        No authentication is currently required to access the API, but in the future it will be added to meter & collect usage data along with allowing for account specific features.
+      </p>
+      <h3>Example Request</h3>
+      
+      <p>
+        <code>https://serene-garden-99449.herokuapp.com/api/v1/users/getOneUser</code>
+      </p>
+      <p>
+        This endpoint will return one random user, as a JSON object in the following format:
+      </p>
+      <p>(A full list of user endpoints can be found <a href="/frontend/docs/user-endpoints.html">here</a>)</p>
+        <pre><code class="block">{
+  "_id": "627cc3181683b442bc0dc14e",
+  "record": {
+    "firstName": "Becky",
+    "lastName": "Wilson",
+    "age": 39,
+    "email": "becky.wilson@example.com",
+    "dob": "1983-05-02T16:12:23.983Z"
+  },
+  "id": "290-82-9697",
+  "company": "Stamm, Durgan and Renner",
+  "jobTitle": "Microbiologist",
+  "registration": {
+    "registrationDate": "2010-08-28T07:42:32.540Z"
+  },
+  "location": {
+    "country": "United States",
+    "state": "Hawaii",
+    "city": "Jacksonville",
+    "address": "3736 W Belt Line Rd"
+  },
+  "phone": "(178)-426-5749",
+  "__v": 0
+}</code></pre>
+<h3>User Object</h3>      
+<p>The user object contains the follow fields:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>_id</td>
+            <td>String</td>
+            <td>The unique identifier for the user</td>
+          </tr>
+          <tr>
+            <td>record</td>
+            <td>Object</td>
+            <td>The user's record</td>
+          </tr>
+          <tr>
+            <td>id</td>
+            <td>String</td>
+            <td>The user's ID</td>
+          </tr>
+          <tr>
+            <td>company</td>
+            <td>String</td>
+            <td>The user's company</td>
+          </tr>
+          <tr>
+            <td>jobTitle</td>
+            <td>String</td>
+            <td>The user's job title</td>
+          </tr>
+          <tr>
+            <td>registration</td>
+            <td>Object</td>
+            <td>The user's registration information</td>
+          </tr>
+          <tr>
+            <td>location</td>
+            <td>Object</td>
+            <td>The user's location information</td>
+          </tr>
+          <tr>
+            <td>phone</td>
+            <td>String</td>
+            <td>The user's phone number</td>
+          </tr>
+          <tr>
+            <td>__v</td>
+            <td>Number</td>
+            <td>The version of the user</td>
+          </tr>
+        </tbody>
+      </table>
+      <h4>User Records</h4>
+      <p>
+        The user record contains the following fields:
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>firstName</td>
+            <td>String</td>
+            <td>The user's first name</td>
+          </tr>
+          <tr>
+            <td>lastName</td>
+            <td>String</td>
+            <td>The user's last name</td>
+          </tr>
+          <tr>
+            <td>age</td>
+            <td>Number</td>
+            <td>The user's age</td>
+          </tr>
+          <tr>
+            <td>email</td>
+            <td>String</td>
+            <td>The user's email address</td>
+          </tr>
+          <tr>
+            <td>dob</td>
+            <td>Date/String</td>
+            <td>The user's date of birth</td>
+          </tr>
+        </tbody>
+      </table>
+      <h4>User Registration</h4>
+      <p>
+        The user registration contains the following fields:
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>registrationDate</td>
+            <td>Date/String</td>
+            <td>The date the user registered</td>
+          </tr>
+        </tbody>
+      </table>
+      <h4>User Location</h4>
+      <p>
+        The user location contains the following fields:
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>country</td>
+            <td>String</td>
+            <td>The user's country</td>
+          </tr>
+          <tr>
+            <td>state</td>
+            <td>String</td>
+            <td>The user's state</td>
+          </tr>
+          <tr>
+            <td>city</td>
+            <td>String</td>
+            <td>The user's city</td>
+          </tr>
+          <tr>
+            <td>address</td>
+            <td>String</td>
+            <td>The user's address</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
     <footer>
-      <p>&copy; 2022 User API</p>
+      <p>&copy; 2022 Goto Users API
+        <p>Created by: Daniel Carmichael & Brandon Mikowski</p>
     </footer>
   </body>
 </html>
