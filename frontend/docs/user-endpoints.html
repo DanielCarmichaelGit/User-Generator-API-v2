@@ -23,7 +23,6 @@
       <h2>User Endpoints</h2>
       <p><em>Currently, all user endpoints are only available as GET requests</em></p>
       <p>All user objects returned will be formated as demonstrated in the <a href="./getting-started.html">Getting Started</a> section.</p>
-      <!-- lists of user endpoints with descriptions and examples -->
       <ul>
         <li>
           <h4>Get One User</h4>
@@ -37,11 +36,11 @@
           </p>
           <p>
             The user object is selected randomly from the database.
-          </p>   
-        </li>
-        <p>
+          </p> 
+          <p>
           example usage: <code>/users/getOneUser</code>
-        </p>
+          </p>  
+        </li>
         <li>
           <h4>Get User (Custom)</h4>
           <p>Returns one or more users with matching parameters.</p>
@@ -74,8 +73,22 @@
             This endpoint returns a JSON array of user objects.
           </p>
           <p>
-            example usage: <code>/users/getUser/firstName&John?all=true</code>
-          </p>
+            example usage: 
+            <ul>
+              <li>
+                <code>/users/getUser/firstName&John?all=true</code>
+                <p>Return all users with the first name "John"</p>
+              </li>
+              <li>
+                <code>/users/getUser/age&35?count=5</code>
+                <p>Return the first 5 users aged 35</p>
+              </li>
+              <li>
+                <code>/users/getUser/lastName&Smith</code>
+                <p>Return the first matching user with the last name "Smith"</p>
+              </li>
+            </ul>
+            </p>
           <p>
             Considerations for using this endpoint:
           </p>
@@ -115,8 +128,38 @@
               <p>
                 If <code>count</code> is larger than the amount of available user records, all records will be returned. This ensures no null records are returned.
               </p>
-            </li>
-
+            </li> 
+          </ul>
+        </li>
+        <li>
+          <h4>Get All Users</h4>
+          <p>Returns all users in the database.</p>
+          <p>
+            <code>GET</code>
+            <code>/users/getAll</code>
+          </p>
+          <p>
+            This endpoint accepts no parameters and returns a JSON array of user objects.
+          </p>
+          <p>
+            example usage: <code>/users/getAll</code>
+          </p>
+        </li>
+        <li>
+          <h4>Get Random Users</h4>
+          <p>
+            Returns 100 randomly selected users.
+          </p>
+          <p>
+            <code>GET</code>
+            <code>/users/random</code>
+          </p>
+          <p>
+            This endpoint accepts no parameters and returns a JSON array of 100 random user objects.
+          </p>
+          <p>
+            example usage: <code>/users/random</code>
+          </p>
         </li>
       </ul>
     </section>
