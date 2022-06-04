@@ -2,7 +2,7 @@ const express = require('express');
 const _ = require('lodash');
 const userModel = require('../models/userModel');
 const schemaModel = require('../models/schemaModel');
-const lastNameModel = require('../models/lastNameModel')
+const lastNameModel = require('../models/lastNameModel');
 
 const router = express.Router()
 
@@ -52,7 +52,7 @@ router.get('/getAllSchemas', async (req, res) => {
 
 // batch create last names
 router.post('/users/createLastNames/batch', async (req,res) => {
-    lastNameModel.insertMany(req).then(function(){
+    lastNameModel.insertMany(req.body).then(function(){
         res.status(200)  // Success
     }).catch(function(error){
         res.status(400).json({message: error.message})     // Failure
