@@ -14,7 +14,9 @@
     </header>
     <nav>
       <ul>
-        <li><a href="./getting-started.html" class="this-page">Getting Started</a></li>
+        <li>
+          <a href="./getting-started.html" class="this-page">Getting Started</a>
+        </li>
         <li><a href="./user-endpoints.html">User Endpoints</a></li>
         <!-- <li><a href="./schema-endpoints.html">Schema Endpoints</a></li> -->
       </ul>
@@ -25,24 +27,35 @@
         Goto Users is a large user database for testing, validating, and more.
       </p>
       <p>
-        The users are available through the API which is a RESTful API that allows you to acces user data in different ways depending upon the endpoint you use.
+        The users are available through the API which is a RESTful API that
+        allows you to acces user data in different ways depending upon the
+        endpoint you use.
       </p>
       <p>
-        The Goto Users API base url is: <code>https://serene-garden-99449.herokuapp.com/api/v1</code>
+        The Goto Users API base url is:
+        <code>https://serene-garden-99449.herokuapp.com/api/v1</code>
       </p>
       <p>
-        No authentication is currently required to access the API, but in the future it will be added to meter & collect usage data along with allowing for account specific features.
+        No authentication is currently required to access the API, but in the
+        future it will be added to meter & collect usage data along with
+        allowing for account specific features.
       </p>
       <h3>Example Request</h3>
-      
+
       <p>
-        <code>https://serene-garden-99449.herokuapp.com/api/v1/users/getOneUser</code>
+        <code
+          >https://serene-garden-99449.herokuapp.com/api/v1/users/getOneUser</code
+        >
       </p>
       <p>
-        This endpoint will return one random user, as a JSON object in the following format:
+        This endpoint will return one random user, as a JSON object in the
+        following format:
       </p>
-      <p>(A full list of user endpoints can be found <a href="/frontend/docs/user-endpoints.html">here</a>)</p>
-        <pre><code class="block">{
+      <p>
+        (A full list of user endpoints can be found
+        <a href="/frontend/docs/user-endpoints.html">here</a>)
+      </p>
+      <pre><code class="block">{
   "_id": "627cc3181683b442bc0dc14e",
   "record": {
     "firstName": "Becky",
@@ -66,8 +79,8 @@
   "phone": "(178)-426-5749",
   "__v": 0
 }</code></pre>
-<h3>User Object</h3>      
-<p>The user object contains the follow fields:</p>
+      <h3>User Object</h3>
+      <p>The user object contains the follow fields:</p>
       <table>
         <thead>
           <tr>
@@ -125,9 +138,7 @@
         </tbody>
       </table>
       <h4>User Records</h4>
-      <p>
-        The user record contains the following fields:
-      </p>
+      <p>The user record contains the following fields:</p>
       <table>
         <thead>
           <tr>
@@ -165,9 +176,7 @@
         </tbody>
       </table>
       <h4>User Registration</h4>
-      <p>
-        The user registration contains the following fields:
-      </p>
+      <p>The user registration contains the following fields:</p>
       <table>
         <thead>
           <tr>
@@ -185,9 +194,7 @@
         </tbody>
       </table>
       <h4>User Location</h4>
-      <p>
-        The user location contains the following fields:
-      </p>
+      <p>The user location contains the following fields:</p>
       <table>
         <thead>
           <tr>
@@ -221,8 +228,8 @@
       </table>
     </section>
     <footer>
-      <p>&copy; 2022 Goto Users API
-        <p>Created by: Daniel Carmichael & Brandon Mikowski</p>
+      <p>&copy; 2022 Goto Users API</p>
+      <p>Created by: Daniel Carmichael & Brandon Mikowski</p>
     </footer>
   </body>
 </html>
