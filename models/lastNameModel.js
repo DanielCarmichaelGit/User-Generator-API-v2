@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const lastName = new mongoose.Schema({
-    "info": {
+    "demographic": {
         required: false,
         type: Object
     }
