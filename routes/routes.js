@@ -2,6 +2,7 @@ const express = require('express');
 const _ = require('lodash');
 const userModel = require('../models/userModel');
 const schemaModel = require('../models/schemaModel');
+const transactionModel = require('../models/transactionModel');
 
 const router = express.Router()
 
@@ -197,22 +198,27 @@ router.delete('/users/deleteUserById/:id', async (req, res) => {
 // the transaction data should be  dynamically generated instead of stored
 // this will provide the client with the highest level of control over the output
 
-// get 100 transactions (base)
-router.get('/transactions/getTransactions', (req,res) => {
-    class product {
-        constructor(code, sku, price, category) {
-
-        }
-    }
-
-    var transactions = [];
+// get 1 transaction (base)
+router.post('/transactions/getTransactions', (req,res) => {
     let price = (Math.random() * 100).toFixed(2);
-    let transaction = {
+    let thisTransaction = {
         "price": price,
         "tax": (price * 0.06).toFixed(2),
-        "productsPurchased": Math.floor(Math.random * 10),
-
+        "productsPurchased": Math.floor(Math.random * 10)
     };
+
+    const data = new transactionModel({
+        transaction: thisTransaction,
+        id: Math.floor(Math.random()*100)
+    })
+
+    try {
+        const dataToSave = await data.save();
+        res.status(200).json(dataToSave)
+    }
+    catch (error) {
+        res.status(400).json({message: error.message})
+    }
 })
 
 
