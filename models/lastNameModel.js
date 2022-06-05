@@ -1,13 +1,9 @@
 const mongoose = require('mongoose');
 
 const lastName = new mongoose.Schema({
-    "demographic": {
+    "info": {
         required: false,
-        type: String
-    },
-    "surname": {
-        required: false,
-        type: String
+        type: Object
     }
 })
 
