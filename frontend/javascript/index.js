@@ -3,8 +3,26 @@ import FetchWrapper from "./fetchwrapper.js";
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
+if($("#mobile-menu-toggle")) {
+mobileMenu();
+}
+function mobileMenu() {
+  const mobileMenu = $(".mobile-menu");
+  $("#mobile-menu-toggle").addEventListener("click", () => {
+    if (mobileMenu.style.display === "block") {
+      mobileMenu.style.display = "none";
+    } else {
+      mobileMenu.style.display = "block";
+    }
+  });
+  $("section").addEventListener("click", () => {
+    mobileMenu.style.display = "none";
+  }); 
+}
+
+if($("#get-user-button")) {
 $("#get-user-button")
-  .addEventListener("click", (event) => {
+.addEventListener("click", (event) => {
     event.target.disabled = true;
     event.target.innerHTML = `
       <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
@@ -19,8 +37,7 @@ $("#get-user-button")
       .get("getOneUser")
       .then((data) => {
         getUserResult.innerHTML = `
-        <pre><code>
-{
+        <pre><code>{
     "name": "${data.record.firstName} ${data.record.lastName}",
     
     "age": "${data.record.age}",
@@ -30,8 +47,7 @@ $("#get-user-button")
     "phone": "${data.phone}",
     
     "occupation": "${data.jobTitle} at ${data.company}",
-}
-        </code></pre>
+}</code></pre>
         `;
       })
       .catch((error) => {
@@ -67,3 +83,4 @@ $("#get-user-button")
         `;
     */
   });
+}
