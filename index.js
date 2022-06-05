@@ -5,7 +5,6 @@ const mongoose = require('mongoose');
 const mongoString = process.env.DATABASE_URL;
 const routes = require('./routes/routes');
 const cors = require('cors');
-const bodyParser = require('body-parser')
 
 
 mongoose.connect(
@@ -36,8 +35,6 @@ database.once('connected', () => {
 })
 
 const app = express();
-
-app.use(bodyParser.json({ type: 'application/json' }))
 
 // add cors headers
 app.use(cors())

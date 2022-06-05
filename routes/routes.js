@@ -2,7 +2,7 @@ const express = require('express');
 const _ = require('lodash');
 const userModel = require('../models/userModel');
 const schemaModel = require('../models/schemaModel');
-const lastNameModel = require('../models/lastNameModel');
+const surnameModel = require('../models/surnameModel');
 
 const router = express.Router()
 
@@ -50,22 +50,20 @@ router.get('/getAllSchemas', async (req, res) => {
 
 // all endpoints associated with user creation and retrieval are below
 
-// batch create last names
-router.post('/users/createLastNames/batch', async (req,res) => {
-    firstNameModel.insertMany(req.body.data).then(function(){
-        res.status(200)  // Success
-    }).catch(function(error){
-        res.status(400).json({message: error.message})     // Failure
-    });
-})
+// Create lastName
+router.post('/users/createLastName', async(req,res) => {
+    const data = new surnameModel({
+        "surname": req.body.name,
+        "demographic": req.body.demographic
+    })
 
-// batch create firstNames
-router.post('/users/createFirstNames/batch', async (req,res) => {
-    firstNameModel.insertMany(req.body).then(function(){
-        res.status(200)  // Success
-    }).catch(function(error){
-        res.status(400).json({message: error.message})     // Failure
-    });
+    try {
+        const dataToSave = await data.save();
+        res.status(200).json(dataToSave)
+    }
+    catch (error) {
+        res.status(400).json({message: error.message})
+    }
 })
 
 router.post('/users/createUser', async (req, res) => {
@@ -139,22 +137,6 @@ router.post('/users/createUser/batch', async(req,res) => {
     }).catch(function(error){
         res.status(400).json({message: error.message})     // Failure
     });
-})
-
-// Batch create lastNames by demographic
-router.post('/users/createLastName', async(req,res) => {
-    const data = new lastNameModel({
-        "surname": req.body.name,
-        "demographic": req.body.demographic
-    })
-
-    try {
-        const dataToSave = await data.save();
-        res.status(200).json(dataToSave)
-    }
-    catch (error) {
-        res.status(400).json({message: error.message})
-    }
 })
 
 
