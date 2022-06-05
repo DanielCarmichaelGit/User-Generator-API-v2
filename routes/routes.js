@@ -2,7 +2,6 @@ const express = require('express');
 const _ = require('lodash');
 const userModel = require('../models/userModel');
 const schemaModel = require('../models/schemaModel');
-const lastNameModel = require('../models/lastNameModel')
 
 const router = express.Router()
 
@@ -49,24 +48,6 @@ router.get('/getAllSchemas', async (req, res) => {
 /* ###################################################################### */
 
 // all endpoints associated with user creation and retrieval are below
-
-// batch create last names
-router.post('/users/createLastNames/batch', async (req,res) => {
-    lastNameModel.insertMany(req.body).then(function(){
-        res.status(200)  // Success
-    }).catch(function(error){
-        res.status(400).json({message: error.message})     // Failure
-    });
-})
-
-// batch create firstNames
-router.post('/users/createFirstNames/batch', async (req,res) => {
-    firstNameModel.insertMany(req.body).then(function(){
-        res.status(200)  // Success
-    }).catch(function(error){
-        res.status(400).json({message: error.message})     // Failure
-    });
-})
 
 router.post('/users/createUser', async (req, res) => {
     const data = new userModel({
@@ -139,15 +120,6 @@ router.post('/users/createUser/batch', async(req,res) => {
     }).catch(function(error){
         res.status(400).json({message: error.message})     // Failure
     });
-})
-
-// Batch create lastNames by demographic
-router.post('/users/createLastName/batch', async(req,res) => {
-    lastNameModel.insertMany(req.body).then(function() {
-        res.status(200) // success
-    }).catch(function(error) {
-        res.status(400).json({message: error.message}) // failure
-    })
 })
 
 
