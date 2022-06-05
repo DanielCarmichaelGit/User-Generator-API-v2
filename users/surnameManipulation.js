@@ -15,23 +15,23 @@ try {
 
     for (var line of black) {
         line = line.split("\t");
-        surnamesByRace.black.push({name:line[0], demographic:"black"});
+        surnamesByRace.black.push({surname:line[0], demographic:"black"});
     }
     for (var line of white) {
         line = line.split("\t");
-        surnamesByRace.white.push({name:line[0], demographic:"white"});
+        surnamesByRace.white.push({surname:line[0], demographic:"white"});
     }
     for (var line of hispanic) {
         line = line.split("\t");
-        surnamesByRace.hispanic.push({name:line[0], demographic:"hispanic"});
+        surnamesByRace.hispanic.push({surname:line[0], demographic:"hispanic"});
     }
     for (var line of nativeAmerican) {
         line = line.split("\t");
-        surnamesByRace.nativeAmerican.push({name:line[0], demographic:"nativeAmerican"});
+        surnamesByRace.nativeAmerican.push({surname:line[0], demographic:"nativeAmerican"});
     }
     for (var line of asian) {
         line = line.split("\t");
-        surnamesByRace.asian.push({name:line[0], demographic:"asian"});
+        surnamesByRace.asian.push({surname:line[0], demographic:"asian"});
     }
     //console.log(surnamesByRace);
 }
@@ -48,6 +48,7 @@ for (var list of surnameArray) {
 //console.log(allSurnames);
 
 for (let thisSurname of allSurnames.slice(0,10)) {
+    console.log(thisSurname)
     axios.post('https://serene-garden-99449.herokuapp.com/api/v1/users/createLastName', {
         thisSurname
     }).then((response) => {
