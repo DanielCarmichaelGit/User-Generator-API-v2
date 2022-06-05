@@ -52,7 +52,7 @@ router.get('/getAllSchemas', async (req, res) => {
 
 // batch create last names
 router.post('/users/createLastNames/batch', async (req,res) => {
-    lastNameModel.insertMany(req.body).then(function(){
+    lastNameModel.insertMany(req.body.data).then(function(){
         res.status(200)  // Success
     }).catch(function(error){
         res.status(400).json({message: error.message})     // Failure
