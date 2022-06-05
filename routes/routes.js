@@ -52,18 +52,11 @@ router.get('/getAllSchemas', async (req, res) => {
 
 // batch create last names
 router.post('/users/createLastNames/batch', async (req,res) => {
-    const data = new lastNameModel({
-        name: req.body.name,
-        demographic: req.body.demographic
+    lastNameModel.insertMany(req.body).then(function(){
+        res.status(200)  // Success
+    }).catch(function(error){
+        res.status(400).json({message: error.message})     // Failure
     });
-
-    try {
-        const dataToSave = await data.save();
-        res.status(200).json(dataToSave);
-    }
-    catch (error) {
-        res.status(400).json({message: error.message});
-    }
 })
 
 // batch create firstNames
@@ -146,6 +139,15 @@ router.post('/users/createUser/batch', async(req,res) => {
     }).catch(function(error){
         res.status(400).json({message: error.message})     // Failure
     });
+})
+
+// Batch create lastNames by demographic
+router.post('/users/createLastName/batch', async(req,res) => {
+    lastNameModel.insertMany(req.body.data).then(function() {
+        res.status(200) // success
+    }).catch(function(error) {
+        res.status(400).json({message: error.message}) // failure
+    })
 })
 
 
