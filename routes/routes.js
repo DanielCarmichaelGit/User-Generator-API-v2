@@ -142,12 +142,19 @@ router.post('/users/createUser/batch', async(req,res) => {
 })
 
 // Batch create lastNames by demographic
-router.post('/users/createLastName/batch', async(req,res) => {
-    lastNameModel.insertMany(req.body).then(function() {
-        res.status(200) // success
-    }).catch(function(error) {
-        res.status(400).json({message: error.message}) // failure
+router.post('/users/createLastName', async(req,res) => {
+    const data = new lastNameModel({
+        name: req.body.name,
+        demographic: req.body.demographic
     })
+
+    try {
+        const dataToSave = await data.save();
+        res.status(200).json(dataToSave)
+    }
+    catch (error) {
+        res.status(400).json({message: error.message})
+    }
 })
 
 
