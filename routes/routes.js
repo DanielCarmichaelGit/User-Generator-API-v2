@@ -144,8 +144,8 @@ router.post('/users/createUser/batch', async(req,res) => {
 // Batch create lastNames by demographic
 router.post('/users/createLastName', async(req,res) => {
     const data = new lastNameModel({
-        surname: req.body.name,
-        demographic: req.body.demographic
+        "surname": req.body.name,
+        "demographic": req.body.demographic
     })
 
     try {
