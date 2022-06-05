@@ -200,16 +200,9 @@ router.delete('/users/deleteUserById/:id', async (req, res) => {
 
 // get 1 transaction (base)
 router.post('/transactions/getTransactions', (req,res) => {
-    let price = (Math.random() * 100).toFixed(2);
-    let thisTransaction = {
-        "price": price,
-        "tax": (price * 0.06).toFixed(2),
-        "productsPurchased": Math.floor(Math.random * 10)
-    };
 
     const data = new transactionModel({
-        transaction: thisTransaction,
-        id: Math.floor(Math.random()*100)
+        transaction: {jewishHoliday: 1}
     })
 
     try {
