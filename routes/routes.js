@@ -57,7 +57,7 @@ router.post('/users/createLastNames/batch', async (req,res) => {
         res.status(200)  // Success
     }
     catch (error) {
-        status(400).json({message: error.message})
+        res.status(400).json({message: error.message}) // Failure
     }
 })
 
