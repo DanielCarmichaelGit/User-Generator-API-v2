@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
 const dataSchema = new mongoose.Schema({
-    "surname": {
+    "demographicAndSurname": {
         required: true,
-        type: String
+        type: Object
     }
 })
 
