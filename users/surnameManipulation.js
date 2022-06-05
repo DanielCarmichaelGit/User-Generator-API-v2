@@ -51,8 +51,10 @@ for (let thisSurname of allSurnames.slice(0,1)) {
     console.log(thisSurname)
 }
 axios.post('https://serene-garden-99449.herokuapp.com/api/v1/users/createLastName', {
-    surname: "carmichael",
-    demographic: "white"
+    demographicAndSurname: {
+        surname: "carmichael",
+        demographic: "white"
+    }
 }).then((response) => {
     console.log(response);
 }, (error) => {
