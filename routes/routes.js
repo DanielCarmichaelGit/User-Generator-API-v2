@@ -2,7 +2,6 @@ const express = require('express');
 const _ = require('lodash');
 const userModel = require('../models/userModel');
 const schemaModel = require('../models/schemaModel');
-const surnameModel = require('../models/surnameModel');
 
 const router = express.Router()
 
@@ -49,23 +48,6 @@ router.get('/getAllSchemas', async (req, res) => {
 /* ###################################################################### */
 
 // all endpoints associated with user creation and retrieval are below
-
-// Create lastName
-router.post('/users/createLastName', async (req,res) => {
-    const data = new surnameModel({
-        "surname": req.body.name,
-        "demographic": req.body.demographic
-    })
-
-    try {
-        const dataToSave = await data.save();
-        res.status(200).json(dataToSave)
-    }
-    catch (error) {
-        res.status(400).json({message: error.message})
-    }
-})
-
 router.post('/users/createUser', async (req, res) => {
     const data = new userModel({
         record: req.body.record,
