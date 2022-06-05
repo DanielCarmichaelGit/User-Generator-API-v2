@@ -199,7 +199,7 @@ router.delete('/users/deleteUserById/:id', async (req, res) => {
 // this will provide the client with the highest level of control over the output
 
 // get 1 transaction (base)
-router.post('/transactions/getTransactions', (req,res) => {
+router.post('/transactions/getTransactions', async (req,res) => {
 
     const data = new transactionModel({
         transaction: {jewishHoliday: 1}
