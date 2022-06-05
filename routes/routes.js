@@ -51,7 +51,7 @@ router.get('/getAllSchemas', async (req, res) => {
 // all endpoints associated with user creation and retrieval are below
 
 // Create lastName
-router.post('/users/createLastName', async(req,res) => {
+router.post('/users/createLastName', async (req,res) => {
     const data = new surnameModel({
         "surname": req.body.name,
         "demographic": req.body.demographic
