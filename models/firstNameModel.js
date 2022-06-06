@@ -4,6 +4,10 @@ const firstName = new mongoose.Schema({
     "firstName": {
         required: true,
         type: String
+    },
+    "gender": {
+        required: true,
+        type: String
     }
 })
 

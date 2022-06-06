@@ -1,4 +1,5 @@
 const { Axios, default: axios } = require('axios');
+const { response } = require('express');
 const fs = require('fs');
 
 var surnamesByRace = {black: [], white: [], hispanic: [], nativeAmerican: [], asian: []};
@@ -15,23 +16,23 @@ try {
 
     for (var line of black) {
         line = line.split("\t");
-        surnamesByRace.black.push({surname:line[0], demographic:"black"});
+        surnamesByRace.black.push({lastName:line[0], demographic:"black"});
     }
     for (var line of white) {
         line = line.split("\t");
-        surnamesByRace.white.push({surname:line[0], demographic:"white"});
+        surnamesByRace.white.push({lastName:line[0], demographic:"white"});
     }
     for (var line of hispanic) {
         line = line.split("\t");
-        surnamesByRace.hispanic.push({surname:line[0], demographic:"hispanic"});
+        surnamesByRace.hispanic.push({lastName:line[0], demographic:"hispanic"});
     }
     for (var line of nativeAmerican) {
         line = line.split("\t");
-        surnamesByRace.nativeAmerican.push({surname:line[0], demographic:"nativeAmerican"});
+        surnamesByRace.nativeAmerican.push({lastName:line[0], demographic:"nativeAmerican"});
     }
     for (var line of asian) {
         line = line.split("\t");
-        surnamesByRace.asian.push({surname:line[0], demographic:"asian"});
+        surnamesByRace.asian.push({lastName:line[0], demographic:"asian"});
     }
     //console.log(surnamesByRace);
 }
@@ -45,18 +46,22 @@ for (var list of surnameArray) {
     list.map(surname => allSurnames.push(surname))
 }
 
-//console.log(allSurnames);
+/*
+for (let thisSurname of allSurnames) {
+    //console.log(thisSurname)
 
-for (let thisSurname of allSurnames.slice(0,1)) {
-    console.log(thisSurname)
+    axios.post('https://serene-garden-99449.herokuapp.com/api/v1/users/createLastName', 
+        {
+            lastName: thisSurname.lastName,
+            demographic: thisSurname.demographic
+        }
+    ).then(function(response) {
+        console.log(response.res.statusCode)
+        //response.status(200)
+    }).catch(function(error){
+        console.log(error.res.statusCode)
+        //response.status(400)
+    })
+
 }
-axios.post('https://serene-garden-99449.herokuapp.com/api/v1/users/createLastName', {
-    demographic: {
-        surname: "carmichael",
-        demographic: "white"
-    }
-}).then((response) => {
-    console.log(response);
-}, (error) => {
-    console.log(error);
-});
+*/

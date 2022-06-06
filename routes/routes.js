@@ -68,7 +68,8 @@ router.post('/users/createLastName', async (req,res) => {
 
 router.post('/users/createFirstName', async (req,res) => {
     const data = new firstNameModel({
-        firstName: req.body.firstName
+        firstName: req.body.firstName,
+        gender: req.body.gender
     })
 
     try {
