@@ -3,6 +3,7 @@ const _ = require('lodash');
 const userModel = require('../models/userModel');
 const schemaModel = require('../models/schemaModel');
 const transactionModel = require('../models/transactionModel');
+const lastNameModel = require('../models/lastNameModel');
 
 const router = express.Router()
 
@@ -49,6 +50,21 @@ router.get('/getAllSchemas', async (req, res) => {
 /* ###################################################################### */
 
 // all endpoints associated with user creation and retrieval are below
+router.post('/users/lastName', async (req,res) => {
+    const data = new lastNameModel({
+        lastName: req.body.lastName,
+        demographic: req.body.demographic
+    });
+
+    try {
+        const dataToSave = await data.save();
+        res.status(200).json(dataToSave);
+    }
+    catch (error) {
+        res.status(400).json({message: error.message});
+    }
+})
+
 router.post('/users/createUser', async (req, res) => {
     const data = new userModel({
         record: req.body.record,
