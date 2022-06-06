@@ -151,6 +151,17 @@ router.get('/users/getOneUser', async (req,res) => {
     }
 })
 
+// get one user
+router.get('/users/getOneUserAlgo', async (req,res) => {
+    try {
+        const data = await userModel.find();
+        res.json(_.sample(data))
+    }
+    catch(error) {
+        res.status(400).json({message: error.message})
+    }
+})
+
 // Get User by ANY Method
 // Needs two parameters: key and value. Two additional query terms are also available: all and count
 // Example Endpoint: http://localhost:3000/api/v1/users/getUser/age&75?all=true
