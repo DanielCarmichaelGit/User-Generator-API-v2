@@ -98,9 +98,9 @@ transportation = transportation.transportation.map(function(job) {
 
 //console.log(arts)
 
-
-for (let job in arts) {
-    axios.post('https://serene-garden-99449.herokuapp.com/api/v1/users/createLastName', 
+///*
+for (let job of transportation) {
+    axios.post('https://serene-garden-99449.herokuapp.com/api/v1/users/createJobtitle', 
         {
             jobtitle: job.job,
             estimatedSalary: job.estimatedSalary
@@ -114,3 +114,4 @@ for (let job in arts) {
     })
 
 }
+//*/
