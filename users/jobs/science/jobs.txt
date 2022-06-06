@@ -1,0 +1,124 @@
+Agronomist
+Analytical Chemist
+Analytical Scientist
+Animal Scientist
+Arborist
+Archaeologist
+Assistant Librarian
+Associate Scientist
+Astronomer
+Atmospheric Scientist
+Biochemist
+Biologist
+Biomedical Engineer
+Biomedical Technician
+Biostatistician
+Biotechnology
+Certified Phlebotomy Technician
+Chemical Analyst
+Chemical Engineer
+Chemical Lab Technician
+Chemical Operator
+Chemical Plant Operator
+Chemical Technician
+Chemist
+Chemistry Technician
+Clinical Associate
+Clinical Consultant
+Clinical Documentation Specialist
+Clinical Laboratory Scientist
+Clinical Laboratory Technician
+Clinical Laboratory Technologist
+Clinical Research Associate
+Clinical Researcher
+Clinical Technician
+Contact Tracer
+Development Chemist
+Ecologist
+Ehs Specialist
+Energy Consultant
+Entry Level Chemical Engineer
+Environmental Associate
+Environmental Coordinator
+Environmental Engineer
+Environmental Manager
+Environmental Planner
+Environmental Protection Specialist
+Environmental Scientist
+Environmental Technician
+Epidemiologist
+Exploration Geologist
+Food Scientist
+Food Technologist
+Forester
+Formulation Chemist
+Gemologist
+Geneticist
+Geographer
+Geologist
+Geophysicist
+Graduate Research Assistant
+Historian
+Histotechnician
+Hydrogeologist
+Hydrologist
+Industrial Hygienist
+Lab Analyst
+Lab Chemist
+Lab Coordinator
+Lab Technologist
+Laboratory Analyst
+Laboratory Assistant
+Laboratory Director
+Laboratory Manager
+Laboratory Supervisor
+Laboratory Technician
+Library Assistant
+Marine Biologist
+Materials Scientist
+Medical Engineer
+Medical Scientist
+Medical Supply Technician
+Meteorologist
+Microbiologist
+Microbiology
+Microbiology Technician
+Microbiology Technologist
+Molecular Biologist
+Organic Chemist
+Patent Agent
+Phlebotomist
+Physical Scientist
+Physicist
+Plant Scientist
+Production Chemist
+Public Health Analyst
+Radiographer
+Radiology Technician
+Renewable Energy
+Research Administrator
+Research Analyst
+Research Associate
+Research Biologist
+Research Chemist
+Research Consultant
+Research Coordinator
+Research Director
+Research Interviewer
+Research Officer
+Research Scientist
+Resource Specialist
+Scientist
+Senior Environmental Engineer
+Senior Scientist
+Social Science Research Assistant
+Social Scientist
+Soil Conservationist
+Soil Scientist
+Student Research Assistant
+Survey Technician
+Telemetry Technician
+Toxicologist
+Wafer Fab Operator
+Wildlife Biologist
+65851

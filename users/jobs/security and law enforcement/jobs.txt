@@ -1,0 +1,103 @@
+911 Dispatcher
+911 Operator
+Armed Guard
+Armed Security
+Armed Security Officer
+Chief Of Staff
+Child Protective Investigator
+Clinical Trial Associate
+Combat Engineer
+Correctional Officer
+Crime Analyst
+Crossing Guard
+Deployment Technician
+Deputy Director
+Detective
+Detention Officer
+Director Of Security
+Dispatch Clerk
+Emergency Dispatcher
+Enrollment Coordinator
+Facility Security Officer
+Finance Officer
+Fire Captain
+Fire Chief
+Fire Fighter
+Fire Lieutenant
+Fire Safety Director
+Firefighter
+Fireman
+Forensic Engineer
+Forensic Examiner
+Forensic Scientist
+Fraud Investigator
+Guard
+Hospital Security Officer
+Hse Advisor
+Infantry
+Infantryman
+Intelligence Analyst
+Intelligence Officer
+Intelligence Specialist
+Investigator
+Jailer
+Juvenile Detention Officer
+Law Enforcement Officer
+Loss Prevention
+Loss Prevention Agent
+Loss Prevention Associate
+Loss Prevention Investigator
+Loss Prevention Officer
+Marine
+Military Analyst
+Military Officer
+Military Police Officer
+National Guard
+Park Ranger
+Patrol Officer
+Personnel Security Specialist
+Police Captain
+Police Chief
+Police Dispatcher
+Police Lieutenant
+Police Officer
+Police Sergeant
+Privacy Officer
+Private Investigator
+Probation Officer
+Public Affairs Specialist
+Public Safety Dispatcher
+Public Safety Officer
+Regulatory Analyst
+Safety Assistant
+Safety Consultant
+Safety Coordinator
+Safety Director
+Safety Inspector
+Safety Manager
+Safety Officer
+Safety Supervisor
+Sap Security Analyst
+Security
+Security Agent
+Security Assistant
+Security Consultant
+Security Coordinator
+Security Director
+Security Dispatcher
+Security Manager
+Security Officer
+Security Specialist
+Security Supervisor
+Security Technician
+Skip Tracer
+Special Police Officer
+State Trooper
+Surveillance Investigator
+Surveillance Operator
+TSA Agent
+Traffic Coordinator
+Training Officer
+Transportation Security Officer
+Unarmed Security Guard
+41267

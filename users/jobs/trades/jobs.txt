@@ -1,0 +1,257 @@
+Aircraft Assembler
+Aircraft Cleaner
+Aircraft Inspector
+Aircraft Maintenance Technician
+Aircraft Mechanic
+Aircraft Technician
+Airframe Mechanic
+Apprentice
+Apprentice Electrician
+Assembly Supervisor
+Atm Technician
+Audio Visual Technician
+Auto Appraiser
+Auto Damage Appraiser
+Auto Detailer
+Auto Glass Technician
+Auto Mechanic
+Auto Technician
+Automation Specialist
+Automotive Detailer
+Automotive Manager
+Automotive Mechanic
+Automotive Painter
+Automotive Service Advisor
+Automotive Service Manager
+Automotive Technician
+Aviation Maintenance Technician
+Aviation Mechanic
+Aviation Technician
+Avionics Technician
+Banquet Houseman
+Bench Technician
+Bike Mechanic
+Bindery Worker
+Body Shop Estimator
+Body Shop Manager
+Building Maintenance Supervisor
+Cabin Cleaner
+Cabinet Maker
+Cable Installation Technician
+Cable Technician
+Calibration Technician
+Car Detailer
+Car Wash Attendant
+Car Washer
+Carpenter
+Carpet Cleaner
+Carpet Technician
+Central Supply Technician
+Certified Welding Inspector
+Cleaner
+Cleaning Technician
+Coach Operator
+Composite Technician
+Computer Support Technician
+Computer Technician
+Control Room Operator
+Crew Leader
+Crew Member
+Crew Scheduler
+Custodial Worker
+Custodian
+Day Porter
+Deckhand
+Desktop Support Technician
+Desktop Technician
+Detailer
+Diesel Mechanic
+Diesel Technician
+Dock Supervisor
+Dock Worker
+Driller
+Electrical Superintendent
+Electrical Technician
+Electronics Technician
+Environmental Services Manager
+Environmental Services Supervisor
+Equipment Manager
+Equipment Specialist
+Equipment Technician
+Exterminator
+Facilities Assistant
+Facilities Maintenance
+Facility Director
+Facility Maintenance Manager
+Family Worker
+Farm
+Farm Manager
+Farm Worker
+Farmer
+Fire Alarm Technician
+Fire Watch
+Floor Technician
+Forestry Technician
+Forklift Mechanic
+Gardener
+General Cleaner
+General Labor
+General Laborer
+General Maintenance Technician
+General Service Technician
+General Worker
+Generalist
+Generator Technician
+Groundskeeper
+Gse Mechanic
+Handyman
+Head Custodian
+Health And Safety Manager
+Heavy Construction
+Heavy Equipment Operators
+Home Theater Installer
+Hospital Housekeeping
+Housekeeping Attendant
+Hvac
+Hvac Apprentice
+Hvac Mechanic
+Hvac Service Technician
+Hvac Technician
+Independent Adjuster
+Industrial Maintenance Mechanic
+Industrial Maintenance Technician
+Installation Manager
+Installer
+Instrumentation Technician
+Irrigation Technician
+Janitor
+Janitorial Manager
+Janitorial Supervisor
+Jeweler
+Journeyman
+Journeyman Electrician
+Journeyman Lineman
+Journeyman Plumber
+Lab Technician
+Laborer
+Landscape Foreman
+Landscape Laborer
+Landscape Technician
+Landscaping
+Lathe Machinist
+Laundry
+Laundry Aide
+Lead Technician
+Lighting Technician
+Line Service Technician
+Loader Operator
+Locksmith
+Low Voltage Technician
+Lube Technician
+Machine Builder
+Maintenance
+Maintenance Administrator
+Maintenance Assistant
+Maintenance Coordinator
+Maintenance Electrician
+Maintenance Engineer
+Maintenance Manager
+Maintenance Mechanic
+Maintenance Planner
+Maintenance Specialist
+Maintenance Superintendent
+Maintenance Supervisor
+Maintenance Technician
+Maintenance Worker
+Manual Machinist
+Marine Electrician
+Marine Mechanic
+Marine Surveyor
+Marine Technician
+Materials Planner
+Mechanic
+Mechanic Helper
+Mechanical Assembler
+Mechanical Technician
+Metal Fabricator
+Mig Welder
+Mill Operator
+Millwright
+Miner
+Motorcycle Mechanic
+Motorcycle Technician
+Ndt Technician
+Newspaper Delivery
+Office Cleaning
+Office Technician
+Oil Field
+Operations Technician
+Optical Technician
+Paint Technician
+Parking Enforcement Officer
+Parts Manager
+Parts Specialist
+Pc Support Technician
+Pc Technician
+Phone Technician
+Pipefitter
+Pipeline
+Pipeline Operator
+Plant Technician
+Plumber Helper
+Pool Manager
+Pool Technician
+Porter
+Prepress Technician
+Printer Technician
+Process Manager
+Property Caretaker
+Pump Operator
+Pumper
+Refrigeration Mechanic
+Refrigeration Technician
+Relay Technician
+Repair Technician
+Rig Welder
+Rigger
+Roustabout
+Sanitation Worker
+School Custodian
+Service Technician
+Sheet Metal Mechanic
+Slot Technician
+Solar Installer
+Sprinkler Fitter
+Stage Technician
+Steamfitter
+Steel Worker
+Structural Welder
+Support Worker
+Technical Service Manager
+Telecom Technician
+Theater Manager
+Tig Welder
+Tire Technician
+Tool Crib Attendant
+Toolmaker
+Tower Climber
+Trailer Mechanic
+Tree Trimmer
+Upholsterer
+Utility Operator
+Utility Technician
+Utility Worker
+Wastewater Operator
+Watchmaker
+Welder Fabricator
+Welder Helper
+Welding Inspector
+Wildlife Technician
+Wind Technician
+Wind Turbine Technician
+Window Cleaner
+Wire Technician
+Wireless Technician
+Yard Worker
+Zamboni Driver
+43680

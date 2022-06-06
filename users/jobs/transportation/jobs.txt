@@ -1,0 +1,108 @@
+Air Traffic Controller
+Aircraft Dispatcher
+Aircraft Electrician
+Airline Pilot
+Airport
+Airport Manager
+Aviation Operations Specialist
+Boat Captain
+Box Truck Driver
+Bus Driver
+Bus Monitor
+Bus Operator
+Bus Person
+Cab Driver
+Car Driver
+Cdl Driver
+Chauffeur
+City Driver
+Class A CDL
+Class B CDL
+Commercial Diver
+Commercial Driver
+Commercial Pilot
+Company Driver
+Courier
+Courier Driver
+Delivery Driver
+Dispatch Manager
+Dispatch Supervisor
+Dispatcher
+Driver Helper
+Dump Truck Driver
+Fleet Administrator
+Fleet Coordinator
+Fleet Manager
+Fleet Mechanic
+Flight Attendant
+Flight Coordinator
+Flight Dispatcher
+Flight Engineer
+Forklift Driver
+Forklift Operator
+Freight Associate
+Freight Broker
+Freight Conductor
+Freight Coordinator
+Garbage Truck Driver
+Heavy Truck Driver
+Helicopter Mechanic
+Helicopter Pilot
+Jet Engine Mechanic
+Lift Operator
+Limousine Driver
+Loader
+Local CDL
+Local Delivery Driver
+Local Truck Driver
+Locomotive Engineer
+Mover
+Non CDL Driver
+Ordinary Seaman
+Otr Driver
+Otr Truck Driver
+Owner Operator
+Packer
+Parts Delivery Driver
+Passenger Service Agent
+Personal Driver
+Petroleum Inspector
+Pilot
+Pizza Delivery Driver
+Professional Driver
+Railroad Conductor
+Ramp Agent
+Rental Agent
+Route Driver
+School Bus Driver
+Shuttle Bus Driver
+Shuttle Driver
+Sonar Technician
+Steward
+Tanker Driver
+Taxi Driver
+Terminal Manager
+Terminal Operator
+Toll Collector
+Tour Operator
+Tow Truck Driver
+Tractor Trailer Driver
+Transit Bus Driver
+Transit Operator
+Transport Driver
+Transportation Assistant
+Transportation Clerk
+Transportation Coordinator
+Transportation Dispatcher
+Transportation Driver
+Transportation Engineer
+Transportation Operations Manager
+Transportation Planner
+Transportation Specialist
+Transportation Supervisor
+Transporter
+Truck Driver
+Truck Loader
+Van Driver
+Yardmaster
+33500

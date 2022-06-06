@@ -1,0 +1,140 @@
+Assembler
+Assembly Line Worker
+Assembly Mechanic
+Assembly Operator
+Assembly Worker
+Assistant Buyer
+Assistant Designer
+Associate Buyer
+Automation Technician
+Bindery Operator
+CNC Machine Operator
+Camera Operator
+Cargo Handler
+Cmm Operator
+Cmm Programmer
+Cnc Lathe Machinist
+Cnc Machinist
+Cnc Operator
+Coating Inspector
+Die Maker
+Director Of Manufacturing
+Electrical Inspector
+Electronic Assembler
+Embroidery Machine Operator
+Fabricator
+Factory Worker
+Forklift
+Freight Handler
+Industrial Production Manager
+Inventory
+Inventory Associate
+Inventory Clerk
+Inventory Control Clerk
+Inventory Control Coordinator
+Inventory Control Supervisor
+Lathe Operator
+Line Leader
+Line Operator
+Machine Operator
+Machinist
+Manufacturing
+Manufacturing Analyst
+Manufacturing Associate
+Manufacturing Engineer
+Manufacturing Manager
+Manufacturing Operations Manager
+Manufacturing Operator
+Manufacturing Planner
+Manufacturing Process Engineer
+Manufacturing Project Manager
+Manufacturing Specialist
+Manufacturing Supervisor
+Manufacturing Technician
+Material Controller
+Material Handler
+Materials Manager
+Meat Packer
+Mechanical Inspector
+Merchandise Planner
+Mold Maker
+Night Stocker
+Order Builder
+Order Picker
+Order Puller
+Order Selector
+Overnight Stocker
+Package Handler
+Packaging
+Packaging Designer
+Packaging Machine Operator
+Packaging Manager
+Packaging Mechanic
+Packaging Operator
+Packaging Specialist
+Packaging Supervisor
+Packaging Technician
+Parts Clerk
+Parts Driver
+Pattern Maker
+Plant Controller
+Plant Operator
+Plant Supervisor
+Press Brake Operator
+Process Operator
+Procurement Coordinator
+Procurement Officer
+Product Design Engineer
+Product Designer
+Product Tester
+Production Control Manager
+Production Designer
+Production Line Worker
+Production Manager
+Production Operator
+Production Planner
+Production Scheduler
+Production Specialist
+Production Supervisor
+Refinery
+Refinery Operator
+Roll Off Driver
+Scale Operator
+Screen Printer
+Seamstress
+Senior Manufacturing Engineer
+Sewing Machine Operator
+Shift Leader
+Shipping Receiving Clerk
+Smt Operator
+Stock Clerk
+Stockroom Associate
+Stockroom Clerk
+Tool Designer
+Tool Maker
+Unloader
+Warehouse Administrator
+Warehouse Assistant
+Warehouse Clerk
+Warehouse Coordinator
+Warehouse Driver
+Warehouse Laborer
+Warehouse Lead
+Warehouse Loader
+Warehouse Material Handler
+Warehouse Operations Manager
+Warehouse Operator
+Warehouse Packer
+Warehouse Picker
+Warehouse Selector
+Warehouse Specialist
+Warehouse Supervisor
+Warehouse Technician
+Warehouseman
+Warranty Manager
+Yard Driver
+Yard Jockey
+Yard Laborer
+Yard Manager
+Yard Supervisor
+31129

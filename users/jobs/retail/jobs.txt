@@ -1,0 +1,93 @@
+Apparel Merchandiser
+Assistant Merchandiser
+Assistant Store Manager
+Bagger
+Bakery
+Bakery Clerk
+Bench Jeweler
+Bookstore
+Cashier
+Clerk
+Commodity Buyer
+Courtesy Clerk
+Customer Assistant
+Dairy Manager
+Dealer
+Deli Clerk
+Distributor
+Ecommerce Manager
+Floor Supervisor
+Floral Manager
+Front End Manager
+Gas Attendant
+Gas Station Cashier
+Grocery Clerk
+Grocery Manager
+Grocery Stocker
+Head Cashier
+Inventory Specialist
+Key Holder
+Mall
+Meat Clerk
+Meat Cutter
+Meat Manager
+Meat Wrapper
+Merchandise Buyer
+Merchandiser
+Merchandising
+Merchandising Assistant
+Merchandising Manager
+Merchandising Specialist
+Personal Shopper
+Pharmacy Cashier
+Produce Clerk
+Produce Manager
+Purchasing Administrator
+Restaurant Cashier
+Retail Assistant
+Retail Assistant Manager
+Retail Associate
+Retail Cashier
+Retail Clerk
+Retail Consultant
+Retail Coordinator
+Retail Department Manager
+Retail Director
+Retail District Manager
+Retail General Manager
+Retail Management
+Retail Manager
+Retail Merchandiser
+Retail Operations Manager
+Retail Sales
+Retail Sales Assistant
+Retail Sales Associate
+Retail Sales Consultant
+Retail Sales Manager
+Retail Sales Merchandiser
+Retail Salesperson
+Retail Specialist
+Retail Store Manager
+Retail Supervisor
+Retail Worker
+Sales Assistant
+Sales Merchandiser
+Service Cashier
+Showroom Manager
+Stock Manager
+Stocker
+Stockman
+Store Assistant
+Store Associate
+Store Cashier
+Store Clerk
+Store Detective
+Store Director
+Store Manager
+Store Shopper
+Store Supervisor
+Vendor Manager
+Visual Merchandiser
+Visual Merchandising Manager
+Wholesale Manager
+29901

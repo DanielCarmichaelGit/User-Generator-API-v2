@@ -1,0 +1,105 @@
+Admissions Director
+Admitting Clerk
+Case Aide
+Case Manager
+Chief Nursing Officer
+Clinic Assistant
+Clinical Analyst
+Clinical Coordinator
+Clinical Nurse Manager
+Clinical Social Worker
+Clinical Supervisor
+Clinical Support Specialist
+Clinical Trial Assistant
+Clinical Trial Manager
+Coding Specialist
+Dental Office Manager
+Dental Receptionist
+Disability Case Manager
+Epic Analyst
+Front Office Assistant
+Geriatric Nursing Assistant
+Health Care Assistant
+Health Coordinator
+Health Educator
+Health Information Technician
+Health Professional
+Health Unit Coordinator
+Healthcare Analyst
+Healthcare Business Analyst
+Healthcare Consultant
+Healthcare Manager
+Hospital Administrator
+Inpatient Coder
+Intake Coordinator
+Intake Specialist
+Medical Administrative Assistant
+Medical Administrator
+Medical Assistant Instructor
+Medical Billing Clerk
+Medical Billing Specialist
+Medical Case Manager
+Medical Claims Processor
+Medical Clerk
+Medical Coder
+Medical Coding Specialist
+Medical Collector
+Medical Consultant
+Medical Courier
+Medical Information Specialist
+Medical Interpreter
+Medical Lab Assistant
+Medical Manager
+Medical Office Administrator
+Medical Office Assistant
+Medical Office Coordinator
+Medical Office Specialist
+Medical Officer
+Medical Practice Manager
+Medical Records Assistant
+Medical Records Clerk
+Medical Records Specialist
+Medical Records Technician
+Medical Representative
+Medical Scheduler
+Medical Secretary
+Medical Support Assistant
+Medication Aide
+Nurse Case Manager
+Nurse Consultant
+Nurse Manager
+Nurse Supervisor
+Nursing Supervisor
+Optical Assistant
+Optometric Technician
+Patient Access Representative
+Patient Access Specialist
+Patient Account Representative
+Patient Care Associate
+Patient Care Coordinator
+Patient Care Representative
+Patient Financial Counselor
+Patient Liaison
+Patient Registrar
+Patient Representative
+Patient Service Associate
+Patient Service Specialist
+Patient Services Coordinator
+Patient Services Representative
+Personal Care Worker
+Pharmaceutical
+Pharmacist Manager
+Pharmacy Analyst
+Pharmacy Clerk
+Pharmacy Coordinator
+Pharmacy Manager
+Pharmacy Supervisor
+Pharmacy Technician Instructor
+Pharmacy Technician Trainee
+RN Case Manager
+Rehab Aide
+Release Of Information Specialist
+Surgery Scheduler
+Surgical Coordinator
+Transplant Coordinator
+75040
