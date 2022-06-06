@@ -5,6 +5,8 @@ const schemaModel = require('../models/schemaModel');
 const transactionModel = require('../models/transactionModel');
 const lastNameModel = require('../models/lastNameModel');
 const firstNameModel = require('../models/firstNameModel');
+const jobtitleModel = require('../models/jobtitleModel');
+const companyModel = require('../models/companyModel');
 
 const router = express.Router()
 
@@ -66,6 +68,7 @@ router.post('/users/createLastName', async (req,res) => {
     }
 })
 
+// create a first name
 router.post('/users/createFirstName', async (req,res) => {
     const data = new firstNameModel({
         firstName: req.body.firstName,
@@ -78,6 +81,37 @@ router.post('/users/createFirstName', async (req,res) => {
     }
     catch (error) {
         res.status(400).json({message: error.message});
+    }
+})
+
+// create a job title
+router.post('/users/createJobtitle', async (req,res) => {
+    const data = new jobtitleModel({
+        jobtitle: req.body.jobtitle,
+        estimatedSalary: req.body.estimatedSalary
+    })
+
+    try {
+        const dataToSave = await data.save();
+        res.status(200).json(dataToSave);
+    }
+    catch (error) {
+        res.status(400).json({message: error.message})
+    }
+})
+
+// create a company
+router.post('/users/createCompany', async (req,res) => {
+    const data = new companyModel({
+        companyName: req.body.companyName
+    })
+
+    try {
+        const dataToSave = await data.save();
+        res.status(200).json(dataToSave);
+    }
+    catch (error) {
+        res.status(400).json({message: error.message})
     }
 })
 

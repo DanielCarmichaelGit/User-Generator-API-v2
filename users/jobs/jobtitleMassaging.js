@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { Axios, default: axios } = require('axios');
 
 var arts = {arts:fs.readFileSync('users/jobs/arts/jobs.txt', {encoding: 'utf8'}).split("\n")};
 var fashion = {fashion:fs.readFileSync('users/jobs/fashion/jobs.txt', {encoding: 'utf8'}).split("\n")};
@@ -19,6 +20,8 @@ var therapy = {therapy:fs.readFileSync('users/jobs/therapy/jobs.txt', {encoding:
 var trades = {trades:fs.readFileSync('users/jobs/trades/jobs.txt', {encoding: 'utf8'}).split("\n")};
 var transportation = {transportation:fs.readFileSync('users/jobs/transportation/jobs.txt', {encoding: 'utf8'}).split("\n")};
 
+allJobtitles = [];
+
 
 
 therapy = therapy.therapy.map(function(job) {
@@ -29,7 +32,7 @@ arts = arts.arts.map(function(job) {
     return {job: job, estimatedSalary: parseInt(arts.arts[arts.arts.length - 1])}
 })
 
-fashion =fashion.fashion.map(function(job) {
+fashion = fashion.fashion.map(function(job) {
     return {job: job, estimatedSalary: parseInt(fashion.fashion[fashion.fashion.length - 1])}
 })
 
@@ -93,4 +96,21 @@ transportation = transportation.transportation.map(function(job) {
     return {job: job, estimatedSalary: parseInt(transportation.transportation[transportation.transportation.length - 1])}
 })
 
-console.log(therapy)
+//console.log(arts)
+
+
+for (let job in arts) {
+    axios.post('https://serene-garden-99449.herokuapp.com/api/v1/users/createLastName', 
+        {
+            jobtitle: job.job,
+            estimatedSalary: job.estimatedSalary
+        }
+    ).then(function(response) {
+        console.log(response.res.statusCode)
+        //response.status(200)
+    }).catch(function(error){
+        console.log(error.res.statusCode)
+        //response.status(400)
+    })
+
+}
