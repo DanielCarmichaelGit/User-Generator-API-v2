@@ -4,6 +4,7 @@ const userModel = require('../models/userModel');
 const schemaModel = require('../models/schemaModel');
 const transactionModel = require('../models/transactionModel');
 const lastNameModel = require('../models/lastNameModel');
+const firstNameModel = require('../models/firstNameModel');
 
 const router = express.Router()
 
@@ -55,6 +56,20 @@ router.post('/users/createLastName', async (req,res) => {
         lastName: req.body.lastName,
         demographic: req.body.demographic
     });
+
+    try {
+        const dataToSave = await data.save();
+        res.status(200).json(dataToSave);
+    }
+    catch (error) {
+        res.status(400).json({message: error.message});
+    }
+})
+
+router.post('/users/createFirstName', async (req,res) => {
+    const data = new firstNameModel({
+        firstName: req.body.firstName
+    })
 
     try {
         const dataToSave = await data.save();
