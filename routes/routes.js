@@ -239,52 +239,72 @@ router.get('/users/getUserById/:id', async (req, res) => {
     
 })
 
-/* ####### GET - GENERATE RANDOM USERS ####### */
-/* count defaults to 1 */
-router.get('/users/generateUser', async (req, res) => {    
+// ####### GET - GENERATE RANDOM USERS ####### 
+// count is optional and defaults to 1, max is 100, min is 1 
+// Example Endpoints: /users/generate   or   /users/generate?count=5
+router.get('/users/generate', async (req, res) => {    
+    let count = Number.parseInt(req.query.count, 10) || 1;
+    if (count > 100) { count = 100; }
+    else if (count < 1) { count = 1; }
+
     async function userData() {
-        // Get one random sample from the database, destructure the array into a single named object (4x)
-        const [ firstName ] = await firstNameModel.aggregate([{$sample: {size: 1}}]),
-              [ lastName ] = await lastNameModel.aggregate([{$sample: {size: 1}}]),
-              [ company ] = await companyModel.aggregate([{$sample: {size: 1}}]),
-              [ jobTitle ] = await jobtitleModel.aggregate([{$sample: {size: 1}}]);
-              // return new array of collected objects
-              return [firstName, lastName, company, jobTitle];
+        // Get random sample from the database for the size of count, store in named array 
+        const firstNameArr = await firstNameModel.aggregate([{$sample: {size: count}}]),
+              lastNameArr = await lastNameModel.aggregate([{$sample: {size: count}}]),
+              companyArr = await companyModel.aggregate([{$sample: {size: count}}]),
+              jobTitleArr = await jobtitleModel.aggregate([{$sample: {size: count}}]);
+              // return new array of arrays of collected objects
+              return [firstNameArr, lastNameArr, companyArr, jobTitleArr];
             }        
     userData().then(data => {
-        // lowercase name strings and capitalize first letter
-        const firstName = data[0].firstName[0].toUpperCase() + data[0].firstName.slice(1).toLowerCase();
-        const lastName = data[1].lastName[0].toUpperCase() + data[1].lastName.slice(1).toLowerCase();
-        // create random date of birth between 18 and 65 using date() and two random numbers
-        // first random number generates milliseconds into the year, producing a random day and month
-        // second random number generates a random year resulting in a current age between 18 and 65
-        const dob = new Date(new Date(Math.floor(Math.random() * 1000 * 60 * 60 * 24 * 365.25))
-            .setFullYear(new Date()
-                .getFullYear() - (Math.floor(Math.random() * 65) + 18)
-            )
-        );
+        const [firstNameArr, lastNameArr, companyArr, jobTitleArr] = data;
+        const users = [];
+        // Format string into lowercase - capitalized first letter
+        function capitalize(name) {
+            return name[0].toUpperCase() + name.slice(1).toLowerCase();
+        }
 
-        // Calculate age base on dob and store in 'age'
-        const age = calculateAge(dob); 
+        // Calculate age base on dob
         function calculateAge(dob) { 
             const diff = Date.now() - dob.getTime();
             const monthDay = new Date(diff); 
             return Math.abs(monthDay.getFullYear() - 1970);
         }
 
-        // final result object
-        return {
-            firstName,
-            lastName,
-            age,
-            dob: dob.toLocaleString().split(",")[0].split("/").join("-"), // formats dob to month-day-year (ex: 7-16-2002)
-            gender: data[0].gender,
-            ethnicity: data[1].demographic,
-            company: data[2].companyName,
-            jobTitle: data[3].jobtitle,
-            salary: data[3].estimatedSalary,
-            email: firstName + lastName + `@email.com`
+        // Generate random phone number
+        function randomPhoneNumber() {  
+            const randomNum = (min, max) => {return Math.floor(Math.random() * (max - min) + min)}
+            return `${randomNum(100, 1000)}-${randomNum(100, 1000)}-${randomNum(1000, 10000)}`;
         }
+        // Build each user and push to users array
+        for (let i = 0; i < count; i++) {
+            const firstName = capitalize(firstNameArr[i].firstName);
+            const lastName = capitalize(lastNameArr[i].lastName);
+            
+            // create random date of birth between 18 and 65 using date() and two random numbers
+            // first random number generates milliseconds into the year, producing a random day and month
+            // second random number generates a random year resulting in a current age between 18 and 65
+            const dob = new Date(new Date(Math.floor(Math.random() * 1000 * 60 * 60 * 24 * 365.25))
+                .setFullYear(new Date()
+                    .getFullYear() - (Math.floor(Math.random() * 65) + 18)
+                )
+            );
+            const age = calculateAge(dob);
+            users.push({
+                firstName,
+                lastName,
+                age,
+                dob: dob.toLocaleString().split(",")[0].split("/").join("-"), // formats dob to month-day-year (ex: 7-16-2002)
+                gender: firstNameArr[i].gender,
+                ethnicity: lastNameArr[i].demographic,
+                company: companyArr[i].companyName,
+                jobTitle: jobTitleArr[i].jobtitle,
+                salary: jobTitleArr[i].estimatedSalary,
+                email: firstName + lastName + `@email.com`,
+                phone: randomPhoneNumber()
+            })
+        }
+        return users;
     }).then(user => {
         res.json(user)
     }).catch(error => {
