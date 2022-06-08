@@ -239,6 +239,59 @@ router.get('/users/getUserById/:id', async (req, res) => {
     
 })
 
+/* ####### GET - GENERATE RANDOM USERS ####### */
+/* count defaults to 1 */
+router.get('/users/generateUser', async (req, res) => {    
+    async function userData() {
+        // Get one random sample from the database, destructure the array into a single named object (4x)
+        const [ firstName ] = await firstNameModel.aggregate([{$sample: {size: 1}}]),
+              [ lastName ] = await lastNameModel.aggregate([{$sample: {size: 1}}]),
+              [ company ] = await companyModel.aggregate([{$sample: {size: 1}}]),
+              [ jobTitle ] = await jobtitleModel.aggregate([{$sample: {size: 1}}]);
+              // return new array of collected objects
+              return [firstName, lastName, company, jobTitle];
+            }        
+    userData().then(data => {
+        // lowercase name strings and capitalize first letter
+        const firstName = data[0].firstName[0].toUpperCase() + data[0].firstName.slice(1).toLowerCase();
+        const lastName = data[1].lastName[0].toUpperCase() + data[1].lastName.slice(1).toLowerCase();
+        // create random date of birth between 18 and 65 using date() and two random numbers
+        // first random number generates milliseconds into the year, producing a random day and month
+        // second random number generates a random year resulting in a current age between 18 and 65
+        const dob = new Date(new Date(Math.floor(Math.random() * 1000 * 60 * 60 * 24 * 365.25))
+            .setFullYear(new Date()
+                .getFullYear() - (Math.floor(Math.random() * 65) + 18)
+            )
+        );
+
+        // Calculate age base on dob and store in 'age'
+        const age = calculateAge(dob); 
+        function calculateAge(dob) { 
+            const diff = Date.now() - dob.getTime();
+            const monthDay = new Date(diff); 
+            return Math.abs(monthDay.getFullYear() - 1970);
+        }
+
+        // final result object
+        return {
+            firstName,
+            lastName,
+            age,
+            dob: dob.toLocaleString().split(",")[0].split("/").join("-"), // formats dob to month-day-year (ex: 7-16-2002)
+            gender: data[0].gender,
+            ethnicity: data[1].demographic,
+            company: data[2].companyName,
+            jobTitle: data[3].jobtitle,
+            salary: data[3].estimatedSalary,
+            email: firstName + lastName + `@email.com`
+        }
+    }).then(user => {
+        res.json(user)
+    }).catch(error => {
+        res.status(400).json({message: error.message})
+    });
+})
+
 //Update by ID Method
 router.patch('/users/updateUserById/:id', async (req, res) => {
     try {
